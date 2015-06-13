@@ -11,3 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
+# Ignore application configuration
+/config/application.yml
