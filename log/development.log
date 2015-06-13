@@ -1161,3 +1161,109 @@ Processing by UsersController#index as HTML
   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
   Rendered users/index.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPaperclipToUser (20150613204633)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (38.0ms)[0m  [1mALTER TABLE "users" ADD "image_file_name" character varying[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "users" ADD "image_content_type" character varying
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "users" ADD "image_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "image_updated_at" timestamp
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150613204633"]]
+  [1m[35m (12.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/users" for ::1 at 2015-06-13 13:49:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (7.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 339ms (Views: 315.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/assets/scaffolds.self-222ed3080cc06e0ce0d63e5a518c9ea93da758dfdd868a399e8caefd3e7e0665.css?body=1" for ::1 at 2015-06-13 13:49:22 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-13 13:49:22 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-13 13:49:22 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:49:22 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:49:23 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-13 13:49:23 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-13 13:49:23 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:49:23 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:49:23 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-13 13:49:23 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-06-13 13:49:24 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (35.9ms)
+  Rendered users/new.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 94ms (Views: 80.7ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/users" for ::1 at 2015-06-13 13:49:53 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"14HKPBgqTv8CTKmzyxdX4d0wTq7ayEdF1yOazDr5nDJo2XmK3V4+Wi0dZow1kgV5RxT+EI8VoEmr1pxNhvoGUQ==", "user"=>{"user_name"=>"foo", "first_namelast_name"=>"bar", "email"=>"foo@gmail.com", "phone_number"=>"3237367793", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fc2af6562a0 @tempfile=#<Tempfile:/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/RackMultipart20150613-7158-12xd2vo.png>, @original_filename="profile.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"profile.png\"\r\nContent-Type: image/png\r\n">, "password_digest"=>"[FILTERED]", "provider"=>"0"}, "commit"=>"Create User"}
+Command :: file -b --mime '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-3rjf21.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac.png[0]'
+Command :: convert '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac.png[0]' -auto-orient -resize "64x64" '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac20150613-7158-1ove11h'
+Command :: file -b --mime '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac20150613-7158-1ove11h'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac.png[0]'
+Command :: convert '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac.png[0]' -auto-orient -resize "100x100" '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac20150613-7158-1vkvglk'
+Command :: file -b --mime '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac20150613-7158-1vkvglk'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac.png[0]'
+Command :: convert '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac.png[0]' -auto-orient -resize "200x200" '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac20150613-7158-1lhm9a3'
+Command :: file -b --mime '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-17e6gac20150613-7158-1lhm9a3'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/_r/z386x5351qx5mbzzvcf6shx40000gn/T/7d97481b1fe66f4b51db90da7e794d9f20150613-7158-eohxrr.png'
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("user_name", "first_namelast_name", "email", "phone_number", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "password_digest", "provider", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"  [["user_name", "foo"], ["first_namelast_name", "bar"], ["email", "foo@gmail.com"], ["phone_number", "3237367793"], ["image_file_name", "profile.png"], ["image_content_type", "image/png"], ["image_file_size", 4300], ["image_updated_at", "2015-06-13 20:49:53.530913"], ["password_digest", "123"], ["provider", "f"], ["created_at", "2015-06-13 20:49:53.787570"], ["updated_at", "2015-06-13 20:49:53.787570"]]
+  [1m[36m (12.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 308ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/users/2" for ::1 at 2015-06-13 13:49:53 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 55ms (Views: 45.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-06-13 13:50:00 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.3ms)
