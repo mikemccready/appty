@@ -35,3 +35,12 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+
+<%if current_user%>
+  You are logged in as <%= current_user.name if current_user %>
+<%= link_to 'LOG OUT!', logout_path, method: :delete %>
+<%else %>
+  <%= link_to 'SIGN UP', new_user_path %>
+  <%= link_to 'LOG IN!', login_path%>
+<%end%>
+
