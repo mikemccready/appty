@@ -767,3 +767,397 @@ Started GET "/sessions/show" for ::1 at 2015-06-13 13:05:41 -0700
 Processing by SessionsController#show as HTML
   Rendered sessions/show.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/" for ::1 at 2015-06-13 13:17:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.7ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (25.9ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (88.0ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (4.8ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.9ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jessgrinberg/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (75.5ms)
+
+
+Started GET "/" for ::1 at 2015-06-13 13:18:08 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 360ms (Views: 358.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/show" for ::1 at 2015-06-13 13:18:10 -0700
+Processing by SessionsController#show as HTML
+  Rendered sessions/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/show" for ::1 at 2015-06-13 13:18:13 -0700
+Processing by SessionsController#show as HTML
+  Rendered sessions/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-222ed3080cc06e0ce0d63e5a518c9ea93da758dfdd868a399e8caefd3e7e0665.css?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-13 13:18:13 -0700
+
+
+Started GET "/sessions/show" for ::1 at 2015-06-13 13:18:20 -0700
+Processing by SessionsController#show as HTML
+  Rendered sessions/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-222ed3080cc06e0ce0d63e5a518c9ea93da758dfdd868a399e8caefd3e7e0665.css?body=1" for ::1 at 2015-06-13 13:18:20 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-13 13:18:20 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-13 13:18:20 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:18:20 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:18:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-13 13:18:21 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-13 13:18:21 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:18:21 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:18:21 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-13 13:18:21 -0700
+
+
+Started GET "/sessions/show" for ::1 at 2015-06-13 13:18:27 -0700
+Processing by SessionsController#show as HTML
+  Rendered sessions/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-222ed3080cc06e0ce0d63e5a518c9ea93da758dfdd868a399e8caefd3e7e0665.css?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-13 13:18:27 -0700
+
+
+Started GET "/sessions/show" for ::1 at 2015-06-13 13:18:48 -0700
+Processing by SessionsController#show as HTML
+  Rendered sessions/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-222ed3080cc06e0ce0d63e5a518c9ea93da758dfdd868a399e8caefd3e7e0665.css?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-13 13:18:48 -0700
+
+
+Started GET "/" for ::1 at 2015-06-13 13:19:28 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/logout" for ::1 at 2015-06-13 13:19:31 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-06-13 13:19:31 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2015-06-13 13:19:33 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-06-13 13:19:33 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQBNLYCt3GVHtSQKL7gqxVv-Gf-aFGgYtoqH3RfDYhDIkGwvcDuUgiNzRmPPZs_ZpqI_-LC_NitcaOBEioPmCV3UXmQRaarVlNzoPc22lVJ1Ap2fR0qddyaap5wfYzn8G9FzmOhMwlh9eWWtPkwm1h5KSI6TwD9qjJraNyP5DDMFPdyF74YwvVUN2eFYiGFL87OYOp2jCJ81UYekCiowHCghVo8lF1PLuTYLeJypNwUNLZxoeBW07lqeY70HvmfiOyzldy20m3yPO_u_vIVWZcNUchsdpAkMuAN64E1WGoivPa-L7sEs2uF7C4v8IahaNRI&state=88e60029b31b20bacdc9564e18757e7b8663ba647d3a8c0a" for ::1 at 2015-06-13 13:19:33 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBNLYCt3GVHtSQKL7gqxVv-Gf-aFGgYtoqH3RfDYhDIkGwvcDuUgiNzRmPPZs_ZpqI_-LC_NitcaOBEioPmCV3UXmQRaarVlNzoPc22lVJ1Ap2fR0qddyaap5wfYzn8G9FzmOhMwlh9eWWtPkwm1h5KSI6TwD9qjJraNyP5DDMFPdyF74YwvVUN2eFYiGFL87OYOp2jCJ81UYekCiowHCghVo8lF1PLuTYLeJypNwUNLZxoeBW07lqeY70HvmfiOyzldy20m3yPO_u_vIVWZcNUchsdpAkMuAN64E1WGoivPa-L7sEs2uF7C4v8IahaNRI", "state"=>"88e60029b31b20bacdc9564e18757e7b8663ba647d3a8c0a", "provider"=>"facebook"}
+Redirected to http://localhost:3000/sessions/show
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/show" for ::1 at 2015-06-13 13:19:34 -0700
+Processing by SessionsController#show as HTML
+  Rendered sessions/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/logout" for ::1 at 2015-06-13 13:19:36 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-06-13 13:19:36 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2015-06-13 13:30:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (24.7ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 305ms (Views: 262.5ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/users/new" for ::1 at 2015-06-13 13:31:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (30.4ms)
+  Rendered users/new.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 102ms (Views: 72.9ms | ActiveRecord: 19.7ms)
+
+
+Started POST "/users" for ::1 at 2015-06-13 13:32:30 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8xKjYWRvkpKhy5CEhdZO2At6zDKBS9NmzJdNKuH2mGolPk7QOXO72XW4X3skguj+glbjp/YyEHnx1u1F4RAAg==", "user"=>{"user_name"=>"foo", "first_namelast_name"=>"bar", "email"=>"foo@gmail.com", "phone_number"=>"3237367793", "image"=>"no picture", "password_digest"=>"[FILTERED]", "provider"=>"0"}, "commit"=>"Create User"}
+  [1m[36m (12.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (28.7ms)[0m  INSERT INTO "users" ("user_name", "first_namelast_name", "email", "phone_number", "image", "password_digest", "provider", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["user_name", "foo"], ["first_namelast_name", "bar"], ["email", "foo@gmail.com"], ["phone_number", "3237367793"], ["image", "no picture"], ["password_digest", "123"], ["provider", "f"], ["created_at", "2015-06-13 20:32:30.267254"], ["updated_at", "2015-06-13 20:32:30.267254"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 63ms (ActiveRecord: 49.0ms)
+
+
+Started GET "/users/1" for ::1 at 2015-06-13 13:32:30 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (7.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 65ms (Views: 47.7ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/users" for ::1 at 2015-06-13 13:32:34 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2015-06-13 13:32:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-06-13 13:32:43 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (4.6ms)
+  Rendered users/edit.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 59ms (Views: 54.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2015-06-13 13:32:46 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 60ms (Views: 58.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-06-13 13:32:47 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-06-13 13:32:48 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/_form.html.erb (3.7ms)
+  Rendered users/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-06-13 13:32:54 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"puIE5xAfZLOOTARU32s7MB1r60ixrKcU+dhwvMXRsN4ZurdR1WsUFqEdy2sh7mmoh09b9uRxQBiFLXY9edIqvQ==", "user"=>{"user_name"=>"foo editing", "first_namelast_name"=>"bar", "email"=>"foo@gmail.com", "phone_number"=>"3237367793", "image"=>"no picture", "password_digest"=>"[FILTERED]", "provider"=>"0"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "user_name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["user_name", "foo editing"], ["updated_at", "2015-06-13 20:32:54.053462"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 20ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1" for ::1 at 2015-06-13 13:32:54 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2015-06-13 13:32:57 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-06-13 13:33:02 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2015-06-13 13:33:06 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-06-13 13:33:17 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/1" for ::1 at 2015-06-13 13:33:30 -0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qb/EZ9nl4lCpt4Wgs/5Ca3byiWCUPRl8ZfHCqU6HYZkW53fRHJGS9YbmSp9NexDz7NY53sHg/nAZBMQo8oT7+g==", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 1]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 11ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/users" for ::1 at 2015-06-13 13:33:30 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.4ms)
