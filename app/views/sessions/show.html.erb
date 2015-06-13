@@ -1,2 +1,36 @@
 <h1>Sessions#show</h1>
 <p>Find me in app/views/sessions/show.html.erb</p>
+
+<h2>User Data</h2>
+
+<table>
+    <tr>
+        <td>Auth Provider: </td>
+        <td><%= @auth["provider"] %></td>
+    </tr>
+    <tr>
+        <td>Unique ID: </td>
+        <td><%= @auth["uid"] %></td>
+    </tr>
+    <tr>
+        <td>Email: </td>
+        <td><%= @auth["info"]["email"] %></td>
+    </tr>
+    <tr>
+        <td>Username: </td>
+        <td><%= @auth["info"]["nickname"] %></td>
+    </tr>
+    <tr>
+        <td>Name: </td>
+        <td><%= @auth["info"]["name"] %></td>
+    </tr>
+    <tr>
+        <td>Mugshot: </td>
+        <td><img src="<%= @auth["info"]["image"] %>" width="50" /></td>
+    </tr>
+</table>
+
+<h2>Auth Contains</h2>
+<code>
+    <%= @auth.inspect %>
+</code>
