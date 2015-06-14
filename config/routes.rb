@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :providerships
+  resources :providerships
+  resources :prodershipgenerates
   root 'users#index'
 
   resources :users
