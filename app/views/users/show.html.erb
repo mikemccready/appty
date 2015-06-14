@@ -30,6 +30,28 @@
   <%= @user.provider %>
 </p>
 
+<h2>Providers</h2>
+<ul>
+  <% for providership in @user.providerships %>
+    <li>
+      <%=h providership.provider.user_name %>
+      (<%= link_to "remove", providership, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>  
+  
+<p><%= link_to "Find Providers", users_path %></p>
+
+<h2>Clients</h2>
+<ul>
+  <% for user in @user.inverse_providers %>
+    <li><%=h user.user_name %></li>
+  <% end %>
+</ul>      
+
+
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 <li><%= link_to 'Log Out', logout_path, method: :delete %></li> 
