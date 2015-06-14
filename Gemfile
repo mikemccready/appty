@@ -38,6 +38,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 
+gem 'google-api-client', '~> 0.7.0', require: 'google/api_client'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
