@@ -14,13 +14,13 @@ Rails.application.routes.draw do
 
   # get 'sessions/new'
 
-  # get 'sessions/show'
+  get 'sessions/show'
 
   # get 'sessions/create'
 
   # get 'sessions/destroy'
 
-  # get '/auth/logout' => 'sessions#destroy'
+  get '/auth/logout' => 'sessions#destroy'
 
   # get "users" => "users#index"
   # get "users/new" => "users#new" 
