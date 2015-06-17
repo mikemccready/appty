@@ -34,6 +34,7 @@ class SessionsController < ApplicationController
     @result = client.execute(
       :api_method => service.calendar_list.list,
       :parameters => {},
+
       :headers => {'Content-Type' => 'application/json'})
     
 
