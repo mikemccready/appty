@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  provider_id: 1
+  user_id: 1
+  start_time: MyString
+  end_time: MyString
+  location: MyString
+  availability: false
+
+two:
+  provider_id: 1
+  user_id: 1
+  start_time: MyString
+  end_time: MyString
+  location: MyString
+  availability: false
