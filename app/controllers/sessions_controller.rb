@@ -32,8 +32,9 @@ class SessionsController < ApplicationController
     client.authorization.access_token = @token
     service = client.discovered_api('calendar', 'v3')
     @result = client.execute(
-      :api_method => service.calendar_list.list,
-      :parameters => {},
+      :api_method => service.events.list,
+      :parameters => { 'calendarId' => 'primary' },
+
 
       :headers => {'Content-Type' => 'application/json'})
     
