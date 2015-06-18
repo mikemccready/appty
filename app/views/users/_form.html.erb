@@ -11,35 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="small-11 small-centered columns field">
     <%= f.label :user_name %><br>
     <%= f.text_field :user_name %>
   </div>
-  <div class="field">
+  <div class="small-11 small-centered columns field">
     <%= f.label :first_namelast_name %><br>
     <%= f.text_field :first_namelast_name %>
   </div>
-  <div class="field">
+  <div class="small-11 small-centered columns field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
+  <div class="small-11 small-centered columns field">
     <%= f.label :phone_number %><br>
     <%= f.text_field :phone_number %>
   </div>
-  <div class="field">
+  <div class="small-11 small-centered columns field">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
-  <div class="field">
+  <div class="small-11 small-centered columns field">
     <%= f.label :password %><br>
     <%= f.password_field :password %>
   </div>
-  <div class="field">
+  <div class="small-11 small-centered columns field">
     <%= f.label :provider %><br>
     <%= f.check_box :provider %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class=" small-11 small-centered columns">
+    <%= f.submit "Submit", :class =>  "button expand" %>
   </div>
 <% end %>
