@@ -1,5 +1,3 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
 <%#= ENV["facebook_secret"] %>
 <%#= ENV["GOOGLE_CLIENT_SECRET"] %>
 
@@ -8,15 +6,15 @@
 
 <h1>Log In</h1>
 <%= form_for :login do |f| %>
-  <div>
+  <div class="small-11 small-centered columns field">
     <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
-  <div>
+  <div class="small-11 small-centered columns field">
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  <div>
-    <%= f.submit 'Log In' %>
+  <div class="small-11 small-centered columns field">
+    <%= f.submit "Log In", :class =>  "button expand" %>
   </div>
 <% end %>
