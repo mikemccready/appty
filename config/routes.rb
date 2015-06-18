@@ -3,25 +3,25 @@ Rails.application.routes.draw do
   resources :providerships
   resources :providerships
   resources :prodershipgenerates
-  # root 'users#index'
-  root 'sessions#new'
+  root 'users#index'
+  # root 'sessions#new'
   resources :users
 
 
 
   # resources :sessions
 
-  get "/auth/:provider/callback" => "sessions#create"
+  # get "/auth/:provider/callback" => "sessions#create"
 
   # get 'sessions/new'
 
-  get 'sessions/show'
+  # get 'sessions/show'
 
   # get 'sessions/create'
 
   # get 'sessions/destroy'
 
-  get '/auth/logout' => 'sessions#destroy'
+  # get '/auth/logout' => 'sessions#destroy'
 
   # get "users" => "users#index"
   # get "users/new" => "users#new" 
