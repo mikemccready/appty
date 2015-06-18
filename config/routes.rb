@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :users
   # resources :sessions
 
-  get "/auth/:provider/callback" => "sessions#show"
+  # get "/auth/:provider/callback" => "sessions#show"
+
+  get "/auth/:provider/callback" => "appointments#index"
 
   # get 'sessions/new'
 

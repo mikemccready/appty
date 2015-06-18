@@ -3,17 +3,21 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments
   # GET /appointments.json
-  def index
+
+   
+def index
+    @auth = request.env['omniauth.auth']
+    session['auth'] = @auth
     @token = @auth["credentials"]["token"]
     client = Google::APIClient.new
     client.authorization.access_token = @token
     service = client.discovered_api('calendar', 'v3')
     @result = client.execute(
       :api_method => service.events.list,
-      :parameters => { 'calendarId' => 'primary' },
-
-
+      :parameters => {'calendarId' => 'primary' },
       :headers => {'Content-Type' => 'application/json'})
+     #redirect_to root_path
+
   end
 
   # GET /appointments/1
