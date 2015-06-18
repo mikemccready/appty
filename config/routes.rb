@@ -11,11 +11,13 @@ Rails.application.routes.draw do
 
   # resources :sessions
 
-  get "/auth/:provider/callback" => "application#authorize"
+  # get "/auth/:provider/callback" => "application#authorize"
+    get "/auth/:provider/callback" => "sessions#show"
+
 
   # get 'sessions/new'
 
-  # get 'sessions/show'
+  get 'sessions/show'
 
   # get 'sessions/create'
 
