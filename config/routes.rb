@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # resources :sessions
 
-  # get "/auth/:provider/callback" => "sessions#create"
+  get "/auth/:provider/callback" => "application#authorize"
 
   # get 'sessions/new'
 

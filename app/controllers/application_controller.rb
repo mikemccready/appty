@@ -25,4 +25,30 @@ class ApplicationController < ActionController::Base
 
     redirect_to authorization_uri.to_s
   end
+
+
+  def authorize
+
+    @auth = request.env['omniauth.auth']
+    session['auth'] = @auth
+    # @token = @auth["credentials"]["token"]
+    # @refresh_token = @auth["credentials"]["refresh_token"]
+    # @expires_at = @auth["credentials"]["expires_at"]
+   
+    #  Auth.create(:provider => google_oauth2, :token => @token,
+    # :refresh_token => @refresh_token, :expires_at => @expires_at)
+    @token = @auth["credentials"]["token"]
+    client = Google::APIClient.new
+    client.authorization.access_token = @token
+    service = client.discovered_api('calendar', 'v3')
+    @result = client.execute(
+      :api_method => service.events.list,
+      :parameters => { 'calendarId' => 'primary' },
+      :headers => {'Content-Type' => 'application/json'}
+      )
+    
+
+    redirect_to root_path
+  end
+
 end
