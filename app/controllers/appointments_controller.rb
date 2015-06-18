@@ -16,6 +16,9 @@ def index
       :api_method => service.events.list,
       :parameters => {'calendarId' => 'primary' },
       :headers => {'Content-Type' => 'application/json'})
+
+
+    Appointment.create(start_time: @result.data["items"][0]["start"]["dateTime"])
      #redirect_to root_path
 
   end
@@ -37,7 +40,7 @@ def index
   # POST /appointments
   # POST /appointments.json
   def create
-    @appointment = Appointment.new(appointment_params)
+    @appointment = Appointment.from_api(request.env['omniauth.auth'])
 
     respond_to do |format|
       if @appointment.save
