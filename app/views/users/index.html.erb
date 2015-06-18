@@ -2,8 +2,8 @@
 
 <h1>Appty Users</h1>
 
-<table>
-  <thead>
+<table class="small-11 small-centered columns">
+<!--   <thead>
     <tr>
       <th>User name</th>
       <th>First namelast name</th>
@@ -14,19 +14,19 @@
       <th>Add Provider</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </thead> -->
 
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.user_name %></td>
-        <td><%= user.first_namelast_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.phone_number %></td>
-        <td><%= image_tag user.image %></td>
-        <td><%= user.provider %></td>
+        <td ><%= image_tag user.image %></td>
+        <td><%= link_to user.user_name, user %></td>
+        <!-- <td><%= user.first_namelast_name %></td> -->
+        <!-- <td><%= user.email %></td> -->
+        <!-- <td><%= user.phone_number %></td> -->
+        <!-- <td><%= user.provider %></td> -->
         <td><%= link_to "Add Provider", providerships_path(:provider_id => user), :method => :post %></td>
-        <td><%= link_to 'Show', user %></td>
+        <!-- <td><%= link_to 'Show', user %></td> -->
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
