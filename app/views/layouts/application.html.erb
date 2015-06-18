@@ -7,32 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <li><a href="/">Home</a></li>
+<!--   <li><a href="/">Home</a></li>
         <% if session['auth'] %>
         <li><a href="/sessions/show">Profile</a></li>
-        <li><a href="/auth/logout">Logout</a></li>
+        <li><a href="logout_path">Logout</a></li>
         <% else %>
         <li><a href="/auth/facebook">Login via Facebook</a></li>
         <li><a href="/auth/google">Login via google </a></li>
 
-        <% end %>
+        <% end %> -->
 
-
-
-
+<li><a href="/">Home</a></li>
+<%if current_user%>
+  You are logged in as <%= current_user.user_name if current_user %>
+<%= link_to 'LOG OUT!', logout_path, method: :delete %>
+<%else %>
+  <%= link_to 'SIGN UP', new_user_path %>
+  <%= link_to 'LOG IN!', login_path%>
+  <%= link_to "Authenticate with Google!", "/auth/google_oauth2" %>
+<%end%>
 
 <%= yield %>
 
-<hr>
-<%#= @auth.inspect %>
-
-
-<pre><%#= debug @result.data %><pre>
-<hr>
-
-
-
-
-
 </body>
 </html>
+
+

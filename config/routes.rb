@@ -6,18 +6,13 @@ Rails.application.routes.draw do
   root 'users#index'
   # root 'sessions#new'
   resources :users
-
-
-
   # resources :sessions
 
-  # get "/auth/:provider/callback" => "application#authorize"
-    get "/auth/:provider/callback" => "sessions#show"
-
+  get "/auth/:provider/callback" => "sessions#show"
 
   # get 'sessions/new'
 
-  get 'sessions/show'
+  # get 'sessions/show'
 
   # get 'sessions/create'
 
@@ -32,9 +27,9 @@ Rails.application.routes.draw do
   # patch 'users/:id' => 'users#update'
   # delete 'users/:id' => 'users#destroy'
 
-   get '/login'     => 'sessions#new'
-   post '/login'    => 'sessions#create'
-   delete '/logout' => 'sessions#destroy'
+  get '/login'     => 'sessions#new'
+  post '/login'    => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
