@@ -17,9 +17,17 @@ def index
       :parameters => {'calendarId' => 'primary' },
       :headers => {'Content-Type' => 'application/json'})
 
+    print "G data"
+    print @result.data["items"]
 
-    Appointment.create(start_time: @result.data["items"][0]["start"]["dateTime"])
-     #redirect_to root_path
+    # Appointment.create(start_time: @result.data["items"][0]["start"]["dateTime"], end_time: @result.data["items"][0]["end"]["dateTime"])
+   
+    @result.data["items"].each do |i|
+      Appointment.create(start_time: i["start"]["dateTime"])
+
+    end  
+ 
+
 
   end
 
