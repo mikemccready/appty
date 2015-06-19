@@ -24,7 +24,8 @@ def index
       if (i["summary"] == "appty")
         Appointment.create(location: i["location"],
                            start_time: i["start"]["dateTime"],
-                           end_time: i["end"]["dateTime"] 
+                           end_time: i["end"]["dateTime"],
+                           availability: true, 
         )
       else
       end
