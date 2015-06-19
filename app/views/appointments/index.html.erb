@@ -11,7 +11,8 @@
 	<br>
 
 	<%if current_user%> 
-	<%= link_to 'Book', current_user %>
+	<%= link_to 'Book', appointments_path %>
+  <%else%>
 	<%end%>
 
 	<br>
