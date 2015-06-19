@@ -1,15 +1,15 @@
 class Appointment < ActiveRecord::Base
 
-	belongs_to :user
+	belongs_to :user, :class_name => "User"
+  	belongs_to :provider, :class_name => "User"
 
-
-	def self.from_api(auto_hash)
-    	appointment = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
-    	appointment.provider_id = auth_hash["creator"]["displayName"]
-    	appointment.start_time = auth_hash["start"]["dateTime"]
-    	appointment.save!
-    	appointment
- 	end
+	# def self.from_api(auto_hash)
+ #    	appointment = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
+ #    	appointment.provider_id = auth_hash["creator"]["displayName"]
+ #    	appointment.start_time = auth_hash["start"]["dateTime"]
+ #    	appointment.save!
+ #    	appointment
+ # 	end
 
 
 
