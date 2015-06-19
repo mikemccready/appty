@@ -25,7 +25,8 @@ def index
         Appointment.create(location: i["location"],
                            start_time: i["start"]["dateTime"],
                            end_time: i["end"]["dateTime"],
-                           availability: true, 
+                           availability: true,
+                           provider_id: current_user.id, 
         )
       else
       end
