@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
 	attr_reader :password
 
+	has_many :user,  :through => :appointments
 	has_many :providerships
 	has_many :providers, :through => :providerships
 	has_many :inverse_providerships, :class_name => "Providership", :foreign_key => "provider_id"
