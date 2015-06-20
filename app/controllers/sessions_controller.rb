@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
 
 		@auth = request.env['omniauth.auth']
    		session['user_id'] = @auth["id"]
+      current_user
    		@token = @auth["credentials"]["token"]
    		client = Google::APIClient.new
    		client.authorization.access_token = @token
@@ -33,7 +34,7 @@ class SessionsController < ApplicationController
     	 
     	 end	
 end
-		# session[:user_id] = @user.id
+		 session[:user_id] = @user.id
 
 
 
@@ -43,7 +44,7 @@ end
 end
 
 	def destroy
-      # session.delete(:user_id)
+       session.delete(:user_id)
     	session['auth'] = nil
    		redirect_to root_path
 	end
