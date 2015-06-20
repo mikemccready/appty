@@ -37,14 +37,15 @@ ActiveRecord::Schema.define(version: 20150619015915) do
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
-    t.string   "first_namelast_name"
     t.string   "email"
     t.string   "phone_number"
-    t.string   "image"
-    t.string   "password_digest"
-    t.boolean  "provider"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string   "image_url"
+    t.string   "url"
+    t.string   "uid"
+    t.string   "provider"
+    t.boolean  "is_provider"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

@@ -20,7 +20,7 @@
 <li><a href="/">Home</a></li>
 <%#if current_user%>
   You are logged in as <%#= current_user.user_name if current_user %>
-<%#= link_to 'LOG OUT!', logout_path, method: :delete %>
+<%= link_to 'LOG OUT!', auth_logout_path %>
 <%#else %>
   <%#= link_to 'SIGN UP', new_user_path %>
   <%#= link_to 'LOG IN!', login_path%>

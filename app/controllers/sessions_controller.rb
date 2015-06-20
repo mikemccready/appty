@@ -1,15 +1,15 @@
 class SessionsController < ApplicationController
 
 def show
-    redirect_to root_path unless session['auth']
-    @auth = session['auth']
+    redirect_to root_path unless session[:user_id]
+    @auth = current_user
 end
 
 
 def create
- @auth = request.env['omniauth.auth']
- session['auth'] = @auth
- redirect_to sessions_show_path
+	@user = User.from_omniauth(request.env["omniauth.auth"])
+	session[:user_id] = @user.id
+	redirect_to sessions_show_path
 
 end
 
