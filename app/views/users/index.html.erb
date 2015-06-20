@@ -6,9 +6,8 @@
   <thead>
     <tr>
       <th>User name</th>
-      <th>First namelast name</th>
       <th>Email</th>
-      <th>Phone number</th>
+ <!--      <th>Phone number</th> -->
       <th>Image</th>
       <th>Provider</th>
       <th>Add Provider</th>
@@ -20,15 +19,14 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.user_name %></td>
-        <td><%= user.first_namelast_name %></td>
         <td><%= user.email %></td>
-        <td><%= user.phone_number %></td>
-        <td><%= image_tag user.image %></td>
+        <td><%#= user.phone_number %></td>
+        <td><img src="<%= user.image_url %>" width="100" /></td>
         <td><%= user.provider %></td>
         <td><%= link_to "Add Provider", providerships_path(:provider_id => user), :method => :post %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Show', user %></td>
+        <td><%#= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

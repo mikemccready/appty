@@ -12,12 +12,20 @@
 		Provider: <%= event["creator"]["displayName"] %><br>
 		Start: <%= event["start"]["dateTime"] %><br>
 		End: <%= event["end"]["dateTime"] %><br>
-		<hr>
+		<br>
+
+	<%if current_user%> 
+	<%= link_to 'Book', current_user %>
+	<%end%>
+
+	<br>
+	<hr>
 	<% else %>
 	<% end %>
 <% end %>
 
 <pre><%#= debug @result.data %><pre>
 <hr>
+
 
 
