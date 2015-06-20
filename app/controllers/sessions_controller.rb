@@ -29,6 +29,8 @@ class SessionsController < ApplicationController
     	                      start_time: i["start"]["dateTime"],
     	                      end_time: i["end"]["dateTime"],
     	                      availability: true,
+                            provider_id: @user.id,
+                         
     	   	)
     	 	else
     	 
