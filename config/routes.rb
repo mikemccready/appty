@@ -3,24 +3,24 @@ Rails.application.routes.draw do
   resources :providerships
   resources :providerships
   resources :prodershipgenerates
-  root 'users#index'
-  # root 'sessions#new'
+  # root 'users#index'
+  root 'sessions#new'
   resources :users
-  # resources :sessions
+  #resources :sessions
 
-  # get "/auth/:provider/callback" => "sessions#show"
+  get "/auth/:provider/callback" => "sessions#create"
 
-  get "/auth/:provider/callback" => "appointments#index"
+  #get "/auth/:provider/callback" => "appointments#index"
 
   # get 'sessions/new'
 
-  # get 'sessions/show'
+   get 'sessions/show'
 
   # get 'sessions/create'
 
   # get 'sessions/destroy'
 
-  # get '/auth/logout' => 'sessions#destroy'
+   get '/auth/logout' => 'sessions#destroy'
 
   # get "users" => "users#index"
   # get "users/new" => "users#new" 
@@ -29,9 +29,9 @@ Rails.application.routes.draw do
   # patch 'users/:id' => 'users#update'
   # delete 'users/:id' => 'users#destroy'
 
-  get '/login'     => 'sessions#new'
-  post '/login'    => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  # get '/login'     => 'sessions#new'
+  # post '/login'    => 'sessions#create'
+  # delete '/logout' => 'sessions#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
