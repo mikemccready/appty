@@ -1,23 +1,55 @@
 class SessionsController < ApplicationController
 
-def show
-    redirect_to root_path unless session[:user_id]
-    @auth = current_user
-end
+	def show
+    	redirect_to root_path unless session[:user_id]
+    	@auth = current_user
+	end
 
 
-def create
-	@user = User.from_omniauth(request.env["omniauth.auth"])
-	session[:user_id] = @user.id
-	redirect_to sessions_show_path
-
-end
+	def create
+		@user = User.from_omniauth(request.env["omniauth.auth"])
+		# @appointment = Appointment.from_omniauth(request.env["omniauth.auth"])
 
 
-def destroy
+		@auth = request.env['omniauth.auth']
+   		session['user_id'] = @auth["id"]
+   		@token = @auth["credentials"]["token"]
+   		client = Google::APIClient.new
+   		client.authorization.access_token = @token
+   		service = client.discovered_api('calendar', 'v3')
+   		@result = client.execute(
+   		  :api_method => service.events.list,
+   		  :parameters => {'calendarId' => 'primary' },
+   		  :headers => {'Content-Type' => 'application/json'})
+ 	
+   		@result.data["items"].each do |i|
+    	 	if (i["summary"] == "appty")
+    	   	Appointment.create(location: i["location"],
+    	                      start_time: i["start"]["dateTime"],
+    	                      end_time: i["end"]["dateTime"],
+    	                      availability: true,
+    	   	)
+    	 	else
+    	 	end 
+    	 end	
+
+		session[:user_id] = @user.id
+
+
+
+		redirect_to sessions_show_path
+
+	end
+
+
+	def destroy
       # session.delete(:user_id)
     	session['auth'] = nil
    		redirect_to root_path
 	end
 end
+
+
+
+
 
