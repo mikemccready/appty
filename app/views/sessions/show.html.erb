@@ -32,24 +32,24 @@
 
 <h2>Auth Contains</h2>
 <code>
-    <%#= @auth.inspect %>
+    <%= @auth.inspect %>
 </code>
 
 <hr>
 <%#= @auth.inspect %>
-<% @result.data["items"].each do |event| %>
-    <% if (event["summary"] == "appty") %>
-<!--        <%=  debug event %><br>  -->
-        Summary: <%= event["summary"] %><br>
-        Provider: <%= event["creator"]["displayName"] %><br>
-        Start: <%= event["start"]["dateTime"] %><br>
-        End: <%= event["end"]["dateTime"] %><br>
+<%# @result.data["items"].each do |event| %>
+    <%# if (event["summary"] == "appty") %>
+<!--        <%#=  debug event %><br>  -->
+        Summary: <%#= event["summary"] %><br>
+        Provider: <%#= event["creator"]["displayName"] %><br>
+        Start: <%#= event["start"]["dateTime"] %><br>
+        End: <%#= event["end"]["dateTime"] %><br>
         <hr>
-    <% else %>
-    <% end %>
-<% end %>
+    <%# else %>
+    <%# end %>
+<%# end %>
 <!-- 
 <pre><%#= debug @result.data %><pre> -->
 <hr>
 
-<%= link_to 'LOG OUT!', logout_path, method: :delete %>
+<%#= link_to 'LOG OUT!', logout_path, method: :delete %>
