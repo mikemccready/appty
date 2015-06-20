@@ -21,6 +21,7 @@ def index
                            start_time: i["start"]["dateTime"],
                            end_time: i["end"]["dateTime"],
                            availability: true,
+                           provider_id: session[:user_id],
                           )
       else
 
