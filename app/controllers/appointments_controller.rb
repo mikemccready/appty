@@ -1,33 +1,8 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
    
-def index
-    # @auth = request.env['omniauth.auth']
-    # session['auth'] = @auth
-    # @token = @auth["credentials"]["token"]
-    # client = Google::APIClient.new
-    # client.authorization.access_token = @token
-    # service = client.discovered_api('calendar', 'v3')
-    # @result = client.execute(
-    #   :api_method => service.events.list,
-    #   :parameters => {'calendarId' => 'primary' },
-    #   :headers => {'Content-Type' => 'application/json'})
-
-
-   
-    # @result.data["items"].each do |i|
-    #   if (i["summary"] == "appty")
-    #     Appointment.create(location: i["location"],
-    #                        start_time: i["start"]["dateTime"],
-    #                        end_time: i["end"]["dateTime"],
-    #                        availability: true,
-    #                        provider_id: i["uid"],
-    #                        user_id: current_user.id,
-    #                       )
-    #   else
-
-    #   end
-    # end  
+  def index
+    @appointment = Appointment.all
   end
 
 
@@ -72,6 +47,6 @@ def index
     end
 
     def appointment_params
-      params.require(:appointment).permit(:provider_id, :user_id, :start_time, :end_time, :location, :availability)
+      params.require(:appointment).permit(:provider_id, :user_id, :start_time, :end_time, :location, :availability, :summary)
     end
 end
