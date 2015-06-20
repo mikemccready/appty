@@ -30,17 +30,17 @@ class SessionsController < ApplicationController
     	                      availability: true,
     	   	)
     	 	else
-    	 	end 
+    	 
     	 end	
+end
+		# session[:user_id] = @user.id
 
-		session[:user_id] = @user.id
 
 
+		# redirect_to sessions_show_path
 
-		redirect_to sessions_show_path
 
-	end
-
+end
 
 	def destroy
       # session.delete(:user_id)

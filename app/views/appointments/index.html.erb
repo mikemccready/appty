@@ -1,26 +1,3 @@
-
-<hr>
-<%#= @auth.inspect %>
-<% @result.data["items"].each do |event| %>
-  <% if (event["summary"] == "appty" ) %>
-<!--    <%=  debug event %><br> -->
-    Summary: <strong><%= event["summary"] %><br></strong>
-    Provider: <%= event["creator"]["displayName"] %><br>
-    Start: <%= event["start"]["dateTime"] %><br>
-    End: <%= event["end"]["dateTime"] %><br>
-	<br>
-
-	<%if current_user%> 
-	<%= link_to 'Book', appointments_path %>
-  <%else%>
-	<%end%>
-
-	<br>
-    <hr>
-  <% else %>
- <% end %>
-<% end %>
-
 <pre><%= debug @result.data %><pre>
 
 
