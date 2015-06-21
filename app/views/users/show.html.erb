@@ -10,9 +10,7 @@
 	<h3>My Appointments</h3>
 	<p><%= link_to "Make Appointment", appointments_path %></p>
 	<% @user.appointments.each do |a| %>
-		<hr>
-		<h3><%= a.summary %></h3>
-		<p><%= a.provider_id %></p>
+		<h3><%= a.event_creator %></h3>
 		<p><%= a.start_time %></p>
 		<p><%= a.end_time %></p>
 		<hr>
