@@ -1,23 +1,10 @@
-<%= link_to 'Back to users', users_path %>
-<% if current_user %>
-	<%= link_to 'Edit', edit_user_path(@user) %>
-<% end %>
 
 <p id="notice"><%= notice %></p>
 
 <img src="<%= @user["image_url"] %>" width="50" />
-<h2><%= @user.user_name %></h2>
-<p>
- <strong>Email:</strong>
- <%= @user.email %>
-</p>
-<p>
- <strong>Phone number:</strong>
- <%= @user.phone_number %>
-</p>
-
-
-
+<h1><%= @user.user_name %></h1>
+<p><%= @user.email %></p>
+<p><%= @user.phone_number %></p>
 
 <% if current_user %>
 	<h3>My Appointments</h3>
@@ -33,8 +20,9 @@
 <% else %>
 	<h2>Available Appointments</h2>
 
-
 <% end %>
+
+
 
 <h3>Providers</h3>
 <ul>
@@ -52,7 +40,13 @@
  <% for user in @user.inverse_providers %>
    <li><%=h user.user_name %></li>
  <% end %>
-</ul>      
+</ul> 
+
+<%= link_to 'Back to users', users_path %><br>
+
+<% if current_user %>
+	<%= link_to 'Edit', edit_user_path(@user) %>
+<% end %>     
 
 
 
