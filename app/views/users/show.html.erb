@@ -25,6 +25,20 @@
  <%= @user.provider %>
 </p>
 
+<h2>Appointments</h2>
+
+<% @user.appointments.each do |a| %>
+	<hr>
+		<h3><%= a.summary %></h3>
+		<p><%= a.provider_id %></p>
+		<p><%= a.start_time %></p>
+		<p><%= a.end_time %></p>
+		<hr>
+<% end %>
+
+
+
+
 <h2>Providers</h2>
 <ul>
  <% for providership in @user.providerships %>

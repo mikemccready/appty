@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
 	attr_reader :password
-
+	has_many :appointments
 	has_many :user,  :through => :appointments
 	has_many :providerships
 	has_many :providers, :through => :providerships
