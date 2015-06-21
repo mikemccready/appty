@@ -30,24 +30,18 @@ class SessionsController < ApplicationController
     	                      end_time: i["end"]["dateTime"],
     	                      availability: true,
                             provider_id: @user.id,
-                            summary: i["summary"],
-                         
-    	   	)
+                            summary: i["summary"],)
     	 	else
-    	 
+
     	 end	
-end
+    end
 		 session[:user_id] = @user.id
 
-
-
-		# redirect_to sessions_show_path
-
-
-end
+     redirect_to user_path(@user)
+  end
 
 	def destroy
-       session.delete(:user_id)
+      session.delete(:user_id)
     	session['auth'] = nil
    		redirect_to root_path
 	end

@@ -1,13 +1,11 @@
 <h1>Sessions#create</h1>
-<p>Find me in app/views/sessions/create.html.erb</p>
 
 
 
 <hr>
-<%= @auth.inspect %>
+<%#= @auth.inspect %>
 <% @result.data["items"].each do |event| %>
 	<% if (event["summary"] == "appty") %>
-<!-- 		<%=  debug event %><br> -->
 		Summary: <%= event["summary"] %><br>
 		Provider: <%= event["creator"]["displayName"] %><br>
 		Start: <%= event["start"]["dateTime"] %><br>
@@ -18,7 +16,7 @@
 	<% end %>
 <% end %>
 
-<pre><%#= debug @result.data %><pre>
-<hr>
+<!-- <pre><%#= debug @result.data %><pre> -->
+
 
 
