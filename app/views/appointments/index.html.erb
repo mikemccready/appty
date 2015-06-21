@@ -6,5 +6,7 @@
 	<p><%= a.provider_id %></p>
 	<p><%= a.start_time %></p>
 	<p><%= a.end_time %></p>
+
+	<%= link_to "Book It", edit_appointment_path(a.id) %>
 <hr>	
 <% end %>
