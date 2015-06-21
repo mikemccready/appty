@@ -24,13 +24,14 @@ class SessionsController < ApplicationController
    		  :headers => {'Content-Type' => 'application/json'})
  	
    		@result.data["items"].each do |i|
-    	 	if (i["summary"] == "appty")
+    	 	if ((i["summary"] == "appty"))
     	   	Appointment.create(location: i["location"],
     	                      start_time: i["start"]["dateTime"],
     	                      end_time: i["end"]["dateTime"],
     	                      availability: true,
                             provider_id: @user.id,
-                            summary: i["summary"],)
+                            summary: i["summary"],
+                            event_id: i["id"])
     	 	else
 
     	 end	
