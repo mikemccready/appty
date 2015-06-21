@@ -2,7 +2,7 @@
 <h2>All appointments available</h2>
 <% @appointment.each do |a| %>
 	<% if a.summary == "appty" %>
-			<h3><%= a.summary %></h3>
+			<h3><%= a.event_creator %></h3>
 			<p><%= a.start_time %></p>
 			<p><%= a.end_time %></p>
 			<%= link_to "Book It", edit_appointment_path(a.id) %>
