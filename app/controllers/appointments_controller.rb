@@ -16,6 +16,15 @@ class AppointmentsController < ApplicationController
 
 
   def edit
+    @appointment = Appointment.find(params[:id])
+    @appointment.update_attributes(:user_id => current_user.id
+                          
+      )
+    if @appointment.save
+      redirect_to appointments_path
+    else
+      render :new
+    end
   end
 
   def create
@@ -23,13 +32,12 @@ class AppointmentsController < ApplicationController
 
 
   def update
-    @appointment = Appointment.update_attribute(params[:id])
-    @appointment.user_id = current_user.id
-    if @appointment.save
-      redirect_to appointments_path
-    else
-      render :new
-    end
+    # @appointment = Appointment.update_attribute(params[:id])
+    # @appointment.update_attributes(:user_id => current_user.id)
+    # if @appointment.save
+    #   redirect_to appointments_path
+    # else
+    #   render :new
   end
 
 
