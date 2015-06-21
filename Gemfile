@@ -33,6 +33,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'semantic-ui-rails'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+
 
 gem 'omniauth'
 gem 'omniauth-facebook'

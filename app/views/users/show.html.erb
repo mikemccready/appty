@@ -25,7 +25,10 @@
  <%= @user.provider %>
 </p>
 
-<h2>Appointments</h2>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<h2>My Appointments</h2>
 
 <% @user.appointments.each do |a| %>
 	<hr>
@@ -59,5 +62,4 @@
 </ul>      
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
