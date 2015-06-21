@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20150621184352) do
   create_table "appointments", force: :cascade do |t|
     t.integer  "provider_id"
     t.integer  "user_id"
-    t.string   "start_time"
-    t.string   "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string   "location"
     t.boolean  "availability"
     t.datetime "created_at",    null: false
