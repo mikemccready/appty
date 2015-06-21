@@ -1,48 +1,42 @@
+<%= link_to 'Back to users', users_path %>
+<% if current_user %>
+	<%= link_to 'Edit', edit_user_path(@user) %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
- <strong>User name:</strong>
- <%= @user.user_name %>
-</p>
-
+<img src="<%= @user["image_url"] %>" width="50" />
+<h2><%= @user.user_name %></h2>
 <p>
  <strong>Email:</strong>
  <%= @user.email %>
 </p>
-
 <p>
  <strong>Phone number:</strong>
  <%= @user.phone_number %>
 </p>
 
-<p>
- <strong>Image:</strong>
-<img src="<%= @user["image_url"] %>" width="50" />
-</p>
 
-<p>
- <strong>Provider:</strong>
- <%= @user.provider %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
 
-<h2>My Appointments</h2>
+<% if current_user %>
+	<h3>My Appointments</h3>
+	<p><%= link_to "Make Appointment", appointments_path %></p>
+	<% @user.appointments.each do |a| %>
+		<hr>
+		<h3><%= a.summary %></h3>
+		<p><%= a.provider_id %></p>
+		<p><%= a.start_time %></p>
+		<p><%= a.end_time %></p>
+		<hr>
+	<% end %>
+<% else %>
+	<h2>Available Appointments</h2>
 
-<% @user.appointments.each do |a| %>
-	<hr>
-	<h3><%= a.summary %></h3>
-	<p><%= a.provider_id %></p>
-	<p><%= a.start_time %></p>
-	<p><%= a.end_time %></p>
-	<hr>
+
 <% end %>
 
-
-
-
-<h2>Providers</h2>
+<h3>Providers</h3>
 <ul>
  <% for providership in @user.providerships %>
    <li>
@@ -51,10 +45,9 @@
    </li>
  <% end %>
 </ul>  
- 
 <p><%= link_to "Find Providers", users_path %></p>
 
-<h2>Clients</h2>
+<h3>Clients</h3>
 <ul>
  <% for user in @user.inverse_providers %>
    <li><%=h user.user_name %></li>
