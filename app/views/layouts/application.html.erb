@@ -9,14 +9,11 @@
 <body>
 
 <%if current_user%>
-<a href="/">Home</a>
-  You are logged in as <%= current_user.user_name if current_user %>
-<%= link_to 'LOG OUT!', auth_logout_path %>
-  
+	<a href="/">Home</a>
+  	You are logged in as <%= current_user.user_name if current_user %>
+	<%= link_to 'LOG OUT!', auth_logout_path %>
 <%end%>
-
 <%= yield %>
-
 </body>
 </html>
 

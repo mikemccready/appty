@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
 		@user = User.from_omniauth(request.env["omniauth.auth"])
 		# @appointment = Appointment.from_omniauth(request.env["omniauth.auth"])
 
-
 		@auth = request.env['omniauth.auth']
    		session['user_id'] = @auth["id"]
       current_user
@@ -25,19 +24,18 @@ class SessionsController < ApplicationController
  	
    		@result.data["items"].each do |i|
     	 	if ((i["summary"] == "appty"))
-    	   	Appointment.create(location: i["location"],
-    	                      start_time: i["start"]["dateTime"],
-    	                      end_time: i["end"]["dateTime"],
-    	                      availability: true,
-                            provider_id: @user.id,
-                            summary: i["summary"],
-                            event_id: i["id"])
+    	   	Appointment.create(
+            location: i["location"],
+            start_time: i["start"]["dateTime"],
+            end_time: i["end"]["dateTime"],
+            availability: true,
+            provider_id: @user.id,
+            summary: i["summary"],
+            event_id: i["id"])
     	 	else
-
-    	 end	
-    end
+        end	
+      end
 		 session[:user_id] = @user.id
-
      redirect_to user_path(@user)
   end
 

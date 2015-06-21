@@ -1,23 +1,20 @@
 class ProvidershipsController < ApplicationController
   # before_action :set_providership, only: [:show, :edit, :update, :destroy]
 
-  # GET /providerships
-  # GET /providerships.json
   # def index
   #   @providerships = Providership.all
   # end
 
-  # GET /providerships/1
-  # GET /providerships/1.json
+
   # def show
   # end
 
-  # # GET /providerships/new
+
   # def new
   #   @providership = Providership.new
   # end
 
-  # # GET /providerships/1/edit
+
   # def edit
   # end
 
@@ -37,8 +34,6 @@ class ProvidershipsController < ApplicationController
       end
   end
 
-  # PATCH/PUT /providerships/1
-  # PATCH/PUT /providerships/1.json
   # def update
   #   respond_to do |format|
   #     if @providership.update(providership_params)
@@ -51,8 +46,6 @@ class ProvidershipsController < ApplicationController
   #   end
   # end
 
-  # DELETE /providerships/1
-  # DELETE /providerships/1.json
   def destroy
     @providership = current_user.providerships.find(params[:id])
     @providership.destroy
