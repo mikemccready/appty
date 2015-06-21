@@ -17,8 +17,9 @@ class AppointmentsController < ApplicationController
 
   def edit
     @appointment = Appointment.find(params[:id])
-    @appointment.update_attributes(:user_id => current_user.id
-                          
+    @appointment.update_attributes(:user_id => current_user.id,
+                                  :summary => current_user.user_name,
+                                  :availability => false
       )
     if @appointment.save
       redirect_to appointments_path

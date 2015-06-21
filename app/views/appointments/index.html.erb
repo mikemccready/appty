@@ -1,12 +1,17 @@
 
 
 <% @appointment.each do |a| %>
-<hr>
-	<h3><%= a.summary %></h3>
-	<p><%= a.provider_id %></p>
-	<p><%= a.start_time %></p>
-	<p><%= a.end_time %></p>
-
-	<%= link_to "Book It", edit_appointment_path(a.id) %>
-<hr>	
+	<% if a.summary == "appty" %>
+	<hr>
+		<h3><%= a.summary %></h3>
+		<p><%= a.provider_id %></p>
+		<p><%= a.start_time %></p>
+		<p><%= a.end_time %></p>
+		<%= link_to "Book It", edit_appointment_path(a.id) %>
+		<hr>
+	<% else %>
+	<% end %>
+	
+	
 <% end %>
+
