@@ -1,7 +1,7 @@
 
 <h2>All appointments available</h2>
 <% @appointment.each do |a| %>
-	<% if a.summary == "appty" %>
+	<% if (a.summary == "appty") && (a.start_time.future?) %>
 			<h3><%= a.event_creator %></h3>
 			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
 			<%= a.end_time.strftime("to %l:%M %p") %></p>
