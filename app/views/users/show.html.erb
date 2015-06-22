@@ -9,7 +9,7 @@
 	<h3>My Appointments</h3>
 	<p><%= link_to "Make Appointment", appointments_path %></p>
 	<% @user.appointments.each do |a| %>
-		<% if (a.summary == "appty") && (a.start_time.future?) %>
+		<% if a.start_time.future? %>
 			<h3><%= a.event_creator %></h3>
 			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
       		<%= a.end_time.strftime("to %l:%M %p") %></p>
