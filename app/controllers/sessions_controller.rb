@@ -37,12 +37,14 @@ class SessionsController < ApplicationController
         end	
       end
 		 session[:user_id] = @user.id
+     flash[:notice] = "You have successfully logged in."
      redirect_to user_path(@user)
   end
 
 	def destroy
       session.delete(:user_id)
     	session['auth'] = nil
+      flash[:notice] = "You have successfully logged out."
    		redirect_to root_path
 	end
 end
