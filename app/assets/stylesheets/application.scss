@@ -24,3 +24,34 @@ body{
 	background-color: white;
 }
 
+#wrap{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#head{
+	margin:7.5em 0 15em;
+	text-align: center;
+
+}
+
+#start_logo {
+	width:70%
+}
+
+#sign_button {
+	postion: absolute;
+	bottom: 0;
+	background-color: black;
+	font-size: 1.5em;
+}
+
+a {
+	color:rgb(39,209,183);
+}
+
+a:hover {
+	color:rgb(15,255,218);
+	background-color:rgba(0,0,0,0);
+	text-decoration:none;
+}
