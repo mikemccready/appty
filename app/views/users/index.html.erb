@@ -7,7 +7,7 @@
  <tbody>
    <% @users.each do |user| %>
      <tr>
-        <td><img src="<%= user.image_url %>" width="100" /></td>
+        <td><img src="<%= user.image_url %>" width="50" id="prof_pic"/></td>
         <td><h2><%= link_to user.user_name, user %></h2></td>
         <td><%= user.email %></td>
         <td><%= user.phone_number %></td>
