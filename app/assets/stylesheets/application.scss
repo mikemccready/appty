@@ -24,6 +24,11 @@ body{
 	background-color: white;
 }
 
+.container-fluid {
+	max-width: 60em;
+	margin: 0 auto;
+}
+
 #wrap{
 	height: 100vh;
 }
