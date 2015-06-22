@@ -24,6 +24,7 @@ class ProvidershipsController < ApplicationController
     @providership = current_user.providerships.build(:provider_id => params[:provider_id])
 
       if @providership.save
+      flash[:notice] = "You provider has been added"
         # format.html {  notice: 'Providership was successfully created.' }
         # format.json { render :show, status: :created, location: @providership }
         redirect_to users_path
@@ -49,6 +50,7 @@ class ProvidershipsController < ApplicationController
   def destroy
     @providership = current_user.providerships.find(params[:id])
     @providership.destroy
+    flash[:notice] = "You provider has been removed"
     # respond_to do |format|
     #   format.html { redirect_to providerships_url, notice: 'Providership was successfully destroyed.' }
     #   format.json { head :no_content }
