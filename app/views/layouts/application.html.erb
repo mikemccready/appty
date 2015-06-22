@@ -15,14 +15,19 @@
 	      <a class="navbar-brand" href="#">
 	        <img alt="Brand" src="<%= asset_path( 'Logo.png' ) %>" id="nav_logo">
 	      </a>
+	      <ul class="nav navbar-nav navbar-right">
+        	<li class="dropdown">
+          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi <%= current_user.user_name if current_user %><span class="caret"></span></a>
+          	<ul class="dropdown-menu">
+            	<li><%= link_to 'Home', users_path %></li>
+           	 	<li role="separator" class="divider"></li>
+           	 	<li><%= link_to 'Log out', auth_logout_path %></li>
+          	</ul>
+        	</li>
+      	</ul>
 	    </div>
 	  </div>
 	</nav>
-
-
-	<%= link_to 'Home', users_path %>
-  	You are logged in as <%= current_user.user_name if current_user %>
-	<%= link_to 'Log out', auth_logout_path %>
 <%end%>
 <%= yield %>
 </body>
