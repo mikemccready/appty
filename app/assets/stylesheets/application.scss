@@ -25,23 +25,25 @@ body{
 }
 
 #wrap{
-	margin: 0 auto;
-	text-align: center;
+	height: 100vh;
 }
 
 #head{
-	margin:7.5em 0 15em;
-	text-align: center;
+	margin: 30vh 0;
+
 
 }
 
 #start_logo {
-	width:70%
+	width:80%;
+	max-width: 30em;
 }
 
 #sign_button {
-	postion: absolute;
-	bottom: 0;
+	width: 90%;
+	max-width: 40em;
+	bottom: 1em;
+	margin: 0 auto;
 	background-color: black;
 	font-size: 1.5em;
 }

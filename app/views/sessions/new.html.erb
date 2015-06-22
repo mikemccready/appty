@@ -1,9 +1,13 @@
 <div id="wrap" class="container-fluid">
-		<div id="head" class="col-xs-12 text-center">
+	<div class="row">
+		<div id="head" class="text-center">
 			<img src="<%= asset_path( 'Logo.png' ) %>" id="start_logo">
 		</div>
-	  <div id="sign_button" class="ui google button teal col-xs-12">
-	  	<i class="google icon"></i>
-			<%= link_to "Sign In with Google", "/auth/google_oauth2" %>
-		</div>
+	<	
+	<div class="row">
+	 		<div id="sign_button" class="ui google button teal col-xs-12 navbar-fixed-bottom">
+	  			<i class="google icon"></i>
+				<%= link_to "Sign In with Google", "/auth/google_oauth2" %>
+			</div>
+	</div>		
 </div>
