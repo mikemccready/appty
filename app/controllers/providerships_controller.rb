@@ -26,7 +26,7 @@ class ProvidershipsController < ApplicationController
       if @providership.save
         # format.html {  notice: 'Providership was successfully created.' }
         # format.json { render :show, status: :created, location: @providership }
-        redirect_to root_path
+        redirect_to users_path
       else
         # format.html { render :new }
         # format.json { render json: @providership.errors, status: :unprocessable_entity }

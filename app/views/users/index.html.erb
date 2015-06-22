@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <h1>Users</h1>
 <table>
  <tbody>
@@ -9,7 +11,9 @@
         <td><h2><%= link_to user.user_name, user %></h2></td>
         <td><%= user.email %></td>
         <td><%= user.phone_number %></td>
+          <div class="btn btn-primary">
         <td><%= link_to "Add Provider", providerships_path(:provider_id => user), :method =>  :post %></td>
+        </div>
         <td><%#= link_to 'Show', user %></td>
         <td><%#= link_to 'Edit', edit_user_path(user) %></td>
         <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +26,4 @@
 
 
 
-
+   

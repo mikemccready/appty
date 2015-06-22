@@ -3,8 +3,8 @@
 <% @appointment.each do |a| %>
 	<% if a.summary == "appty" %>
 			<h3><%= a.event_creator %></h3>
-			<p><%= a.start_time %></p>
-			<p><%= a.end_time %></p>
+			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
+			<%= a.end_time.strftime("to %l:%M %p") %></p>
 			<%= link_to "Book It", edit_appointment_path(a.id) %>
 			<hr>
 	<% else %>

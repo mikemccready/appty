@@ -3,16 +3,16 @@
 
 <img src="<%= @user["image_url"] %>" width="50" />
 <h1><%= @user.user_name %></h1>
-<p><%= @user.email %></p>
-<p><%= @user.phone_number %></p>
+<p><%#= @user.email %></p>
+<p><%#= @user.phone_number %></p>
 
 <% if current_user %>
 	<h3>My Appointments</h3>
 	<p><%= link_to "Make Appointment", appointments_path %></p>
 	<% @user.appointments.each do |a| %>
 		<h3><%= a.event_creator %></h3>
-		<p><%= a.start_time %></p>
-		<p><%= a.end_time %></p>
+	<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
+      <%= a.end_time.strftime("to %l:%M %p") %></p>
 		<hr>
 	<% end %>
 <% else %>
