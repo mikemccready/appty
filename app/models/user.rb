@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
       	user.phone_number = auth_hash['info']['phone']
 		user.image_url = auth_hash['info']['image']
 		user.url = auth_hash['info']['urls']['Google']
+		user.token = auth_hash['credentials']['token']
       	user.save!
       	user
     end
