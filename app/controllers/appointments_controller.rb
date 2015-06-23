@@ -20,24 +20,13 @@ class AppointmentsController < ApplicationController
     @appointment.update_attributes(:user_id => current_user.id,
                                   :summary => current_user.user_name,
                                   :availability => false)
-    # client = Google::APIClient.new
-    # client.authorization.access_token = current_user.token
-    # service = client.discovered_api('calendar', 'v3')
-
-    # @result = client.execute(:api_method => service.events.update,
-    #                     :parameters => {'calendarId' => 'primary', 'eventId' => @appointment.event_id},
-    #                     :body_object => @appointment,
-    #                     :headers => {'Content-Type' => 'application/json'})
-    # print result.data.updated
-
-
 
 
 
 
 
     if @appointment.save
-      
+
       client = Google::APIClient.new
       client.authorization.access_token = current_user.token
       service = client.discovered_api('calendar', 'v3')
@@ -52,10 +41,13 @@ class AppointmentsController < ApplicationController
       # event.description = @event.description
       # event.location = @event.location
 
-      result = client.execute(:api_method => service.events.update,
+      @result = client.execute(:api_method => service.events.update,
                               :parameters => {'calendarId' => 'primary', 'eventId' =>  @appointment.event_id},
                               :body_object => appointment,
                               :headers => {'Content-Type' => 'application/json'})
+      
+
+
       flash[:notice] = "You appointment has been booked"
       redirect_to appointments_path
     else
