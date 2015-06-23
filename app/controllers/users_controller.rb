@@ -2,11 +2,27 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    respond_to do |format|
+        format.html {
+            render
+        }
+        format.json {
+            render json: @users, only: [:user_name]
+        }
+      end
   end
 
   def show
     @user = User.find(params[:id])
     @appointments = @user.appointments
+    respond_to do |format|
+          format.html {
+              render
+          }
+          format.json {
+              render json: @user, only: [:user_name]
+          }
+      end
   end
 
 
@@ -23,20 +39,23 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id.to_s
       # flash[:success] = "You have succesfully sign up"
+      # format.json { render :show, status: :created, location: @user}
       redirect_to root_path 
     else
       render :new
+      # format.json { render json: @user.errors, status: :unprocessable_entity }
+
     end
   end
 
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        # format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        # format.html { render :edit }
+        # format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,10 +63,10 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
 
