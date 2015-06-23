@@ -19,9 +19,15 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
     @appointment.update_attributes(:user_id => current_user.id,
                                   :summary => current_user.user_name,
-                                  :availability => false,
+                                  :availability => false)
+    client = Google::APIClient.new
+    client.authorization.access_token = current_user.token
+    service = client.discovered_api('calendar', 'v3')
 
-      )
+    @set_event = client.execute(:api_method => service.events.insert,
+                        :parameters => {'calendarId' => current_user.email, 'sendNotifications' => true},
+                        :body => JSON.dump(@event),
+                        :headers => {'Content-Type' => 'application/json'})
     if @appointment.save
       flash[:notice] = "You appointment has been booked"
       redirect_to appointments_path
