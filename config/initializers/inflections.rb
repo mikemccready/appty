@@ -15,7 +15,7 @@
 #   inflect.acronym 'RESTful'
 # end
 
-ActiveSupport::Inflector.inflections(:en) do |inflect|
- inflect.irregular 'apiuser', 'apiusers'
- inflect.acronym 'API'
-end
+# ActiveSupport::Inflector.inflections(:en) do |inflect|
+#  inflect.irregular 'user', 'users'
+#  inflect.acronym 'API'
+# end
