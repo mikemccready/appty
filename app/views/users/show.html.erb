@@ -4,7 +4,7 @@
 		<img src="<%= @user["image_url"] %>" width="50" id="prof_pic"/>
 	</div>
 	<div class="col-xs-10 col-sm-11">	
-		<h1><%= @user.user_name %></h1>
+		<h1><%= @user.user_name.titleize %></h1>
 	</div>	
 </div>
 <p><%#= @user.email %></p>
@@ -15,7 +15,7 @@
 	<p><%= link_to "Make Appointment", appointments_path %></p>
 	<% @user.appointments.each do |a| %>
 		<% if a.start_time.future? %>
-			<h3><%= a.event_creator %></h3>
+			<h3><%= a.event_creator.titleize %></h3>
 			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
       		<%= a.end_time.strftime("to %l:%M %p") %></p>
 		<% end %>	
@@ -30,7 +30,7 @@
 	<ul>
 	<% for providership in @user.providerships %>
    		<li>
-     		<%=h providership.provider.user_name %>
+     		<%=h providership.provider.user_name.titleize %>
      		(<%= link_to "remove", providership, :method => :delete %>)
    		</li>
  <% end %>
@@ -40,7 +40,7 @@
 <h3>Clients</h3>
 <ul>
 	<% for user in @user.inverse_providers %>
-   		<li><%=h user.user_name %></li> 
+   		<li><%=h user.user_name.titleize %></li> 
 	<% end %>
 </ul> 
 

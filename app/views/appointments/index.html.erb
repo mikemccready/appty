@@ -1,14 +1,13 @@
 
+
 <h2>Available Appointments</h2>
-<% @appointment.each do |a| %>
+<% @appointments.each do |a| %>
 	<% if (a.summary == "appty") && (a.start_time.future?) %>
 		<div class="row">
-			<h4><%= a.event_creator %></h4>
+			<h4><%= a.event_creator.titleize %></h4>
 			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
 			<%= a.end_time.strftime("to %l:%M %p") %></p>
 			<%= link_to "Book It", edit_appointment_path(a.id) %>
-		
-
 			<hr>
 		</div>	
 	<% else %>
