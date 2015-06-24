@@ -36,14 +36,17 @@ class SessionsController < ApplicationController
     	 	else
         end	
       end
+
 		 session[:user_id] = @user.id
-     if (@user["sign_ins"] = 1)
+     @user["sign_ins"] += 1
+     @user.save
+
+     if (@user["sign_ins"] == 1)
        redirect_to edit_user_path(@user)
-       @user.sign_ins += 1
-       @user.save
      else 
-      redirect_to appointments_path
+       redirect_to user_path(@user)
      end
+
   end
 
 	def destroy
