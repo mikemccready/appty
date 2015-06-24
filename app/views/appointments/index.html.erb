@@ -7,6 +7,8 @@
 			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
 			<%= a.end_time.strftime("to %l:%M %p") %></p>
 			<%= link_to "Book It", edit_appointment_path(a.id) %>
+		
+
 			<hr>
 		</div>	
 	<% else %>

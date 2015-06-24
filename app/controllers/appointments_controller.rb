@@ -15,6 +15,7 @@ class AppointmentsController < ApplicationController
 
 
   def show
+     @appointment = Appointment.find(params[:id])
   end
 
 
@@ -56,8 +57,8 @@ class AppointmentsController < ApplicationController
       
 
 
-      flash[:notice] = "You appointment has been booked"
-      redirect_to appointments_path
+      flash[:notice] = "Confirmed!"
+      redirect_to appointment_path
     else
       render :new
     end
