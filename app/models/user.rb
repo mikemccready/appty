@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
 		user.image_url = auth_hash['info']['image']
 		user.url = auth_hash['info']['urls']['Google']
 		user.token = auth_hash['credentials']['token']
+		user.category = ""
+		user.sign_ins = 1
       	user.save!
       	user
     end
