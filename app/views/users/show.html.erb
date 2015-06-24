@@ -1,39 +1,37 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<div class="row">
+<div class="row" id="profileID">
 	<div class="col-xs-2 col-sm-1">
 		<img src="<%= @user["image_url"] %>" width="50" id="prof_pic"/>
 	</div>
 	<div class="col-xs-10 col-sm-11">	
 		<h1><%= @user.user_name %></h1>
 	</div>	
-</div>	
-
+</div>
 <p><%#= @user.email %></p>
 <p><%#= @user.phone_number %></p>
-
+<div class="row">
 <% if current_user %>
 	<h3>My Appointments</h3>
-	<p><%= link_to "Make Appointment", appointments_path %></p>
-	<% @user.appointments.each do |a| %>
-		<% if a.start_time.future? %>
-			<h3><%= a.event_creator %></h3>
-			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
-      		<%= a.end_time.strftime("to %l:%M %p") %></p>
-			<hr>
+		<p><%= link_to "Make Appointment", appointments_path %></p>
+		<% @user.appointments.each do |a| %>
+			<% if a.start_time.future? %>
+				<h3><%= a.event_creator %></h3>
+				<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
+      			<%= a.end_time.strftime("to %l:%M %p") %></p>
+			<% end %>	
 		<% end %>	
-	<% end %>
 <% else %>
 	<h2>Available Appointments</h2>
-
 <% end %>
 
 
 
 <h3>Providers</h3>
-<ul>
- <% for providership in @user.providerships %>
-   <li>
-     <%=h providership.provider.user_name %>
+
+	<ul>
+	<% for providership in @user.providerships %>
+   		<li>
+     	<%=h providership.provider.user_name %>
      (<%= link_to "remove", providership, :method => :delete %>)
    </li>
  <% end %>
@@ -48,6 +46,7 @@
 </ul> 
 
 <%= link_to 'Back to users', users_path %><br>
+</div>	
 
 <%# if current_user %>
 	<%#= link_to 'Edit', edit_user_path(@user) %>
