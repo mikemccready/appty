@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
  
-  resources :users,  only: [:index, :show, :create, :edit, :destroy] 
+  resources :users
 
 
   get "/auth/:provider/callback" => "sessions#create"

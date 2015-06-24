@@ -37,12 +37,12 @@ class SessionsController < ApplicationController
         end	
       end
 		 session[:user_id] = @user.id
-     if (@user.sign_ins = 1)
+     if (@user["sign_ins"] = 1)
        redirect_to edit_user_path(@user)
        @user.sign_ins += 1
        @user.save
      else 
-      redirect_to user_path(@user)
+      redirect_to appointments_path
      end
   end
 
