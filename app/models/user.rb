@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 	has_attached_file :image, styles: { small: "64x64", med: "100x100", large: "200x200" }
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-	validates :user_name, presence: true
+	validates :user_name, presence: true, length: {minimum: 2}
 	validates :email, presence: true
 	validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }#, uniqueness: {case_sensitive: false}
 
