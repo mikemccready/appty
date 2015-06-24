@@ -10,48 +10,6 @@
 <body>
 <%if current_user%>
 
-<div class="ui left vertical inverted labeled icon sidebar menu">
-  <a class="item">
-    <i class="home icon"></i>
-    Home
-  </a>
-  <a class="item">
-    <i class="block layout icon"></i>
-    Topics
-  </a>
-  <a class="item">
-    <i class="smile icon"></i>
-    Friends
-  </a>
-  <a class="item">
-    <i class="calendar icon"></i>
-    History
-  </a>
-  <a class="item">
-    <i class="mail icon"></i>
-    Messages
-  </a>
-  <a class="item">
-    <i class="chat icon"></i>
-    Discussions
-  </a>
-  <a class="item">
-    <i class="trophy icon"></i>
-    Achievements
-  </a>
-  <a class="item">
-    <i class="shop icon"></i>
-    Store
-  </a>
-  <a class="item">
-    <i class="settings icon"></i>
-    Settings
-  </a>
-</div>
-
-
-
-
 <nav class="navbar navbar-default">
   <div class="container-fluid" id="nav-contain">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,9 +28,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Hi <%= current_user.user_name %></a></li>
-        <li><%= link_to 'Home', users_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Appointments', appointments_path %></li>
+        <li><%= link_to 'Providers', users_path %></li>
         <li role="separator" class="divider"></li>
         <li><%= link_to 'Log out', auth_logout_path %></li>
       </ul>
