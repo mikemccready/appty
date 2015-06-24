@@ -34,6 +34,12 @@ body {
 	margin: 0 auto;
 }
 
+.bottom-nav {
+	border-top: rgba(240,240,240, .8) solid 1px;
+	font-size: 1.25em;
+	color: rgba(240,240,240, .8); 
+}
+
 #wrap{
 	height: 100vh;
 }
@@ -83,7 +89,7 @@ a:hover {
 
 .alert-info {
   background-color: rgba(39,209,183,.5);
-  border-color: rgba(39,209,183,.5);
+  border-color: rgba(39,209,183,.8);
   color: #666666;
 }
 
