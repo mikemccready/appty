@@ -28,7 +28,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
 
       client = Google::APIClient.new
-      client.authorization.access_token = current_user.token
+      client.authorization.access_token = @appointment.provider.token
       service = client.discovered_api('calendar', 'v3')
 
       @result = client.execute(:api_method => service.events.get, 
