@@ -87,7 +87,7 @@
 
 
 
-<%end%>
+<% end %>
 
 <div class="container-fluid">
  <% if flash[:notice] %>
@@ -101,6 +101,23 @@
 
 <%= yield %>
 </div>
+<% if current_user %>
+  <div class="visible-xs">
+    <div class="nav nav-pills nav-bar navbar-fixed-bottom row">
+      <div role="presentation" class="col-xs-4 text-center">
+        <a href="#"><span class="glyphicon glyphicon-calendar"></span></a>
+      </div>
+      <div role="presentation" class="col-xs-4 text-center">
+        <a href="#"><span class="glyphicon glyphicon-briefcase"></span></a>
+      </div>
+      <div role="presentation" class="col-xs-4 text-center">
+        <a href="#"><span class="glyphicon glyphicon-home"></span></a>
+      </div>
+    <div>
+
+  </div>
+
+<% end %>
 </body>
 </html>
 
