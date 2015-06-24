@@ -37,7 +37,7 @@ class SessionsController < ApplicationController
         end	
       end
 		 session[:user_id] = @user.id
-     flash[:notice] = "You have successfully logged in."
+     # flash[:notice] = "You have successfully logged in."
      redirect_to user_path(@user)
   end
 

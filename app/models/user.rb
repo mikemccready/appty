@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 	validates :user_name, presence: true
 	validates :email, presence: true
-	validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, uniqueness: {case_sensitive: false}
+	validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }#, uniqueness: {case_sensitive: false}
 
 	class << self
 	  def from_omniauth(auth_hash)

@@ -1,34 +1,12 @@
-<p id="notice"><%= notice %></p>
-<h2>All appointments available</h2>
-<p>
-  <strong>Provider:</strong>
-  <%= @appointment.provider_id %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @appointment.user_id %>
-</p>
+  <h1>You are booked with:</h1>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @appointment.start_time %>
-</p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @appointment.end_time %>
-</p>
+    <% if @appointment.start_time.future? %> 
+      <h3><%= @appointment.event_creator.titleize %></h3>
+      <p>On: <%= @appointment.start_time.strftime("%A, %B %-d at %l:%M %p")%> </p>
+       <p>At:   <%= @appointment.end_time.strftime("to %l:%M %p") %></p>
+       <h3><i class = 'glyphicon glyphicon-ok'></i></h3>
+      <hr>
+      <%end%>
 
-<p>
-  <strong>Location:</strong>
-  <%= @appointment.location %>
-</p>
-
-<p>
-  <strong>Availability:</strong>
-  <%= @appointment.availability %>
-</p>
-
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Back', appointments_path %>
