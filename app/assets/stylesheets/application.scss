@@ -21,11 +21,11 @@
 @import "semantic-ui/collections/menu";
 
 body{
-	background-color: white;
+	background-color: rgba(235,240,240,1);
 }
 
 .container-fluid {
-	max-width: 60em;
+	max-width: 50em;
 	margin: 0 auto;
 }
 
@@ -38,10 +38,15 @@ body{
 	height: 100vh;
 }
 
+.row{
+	background-color: white;
+	padding: .5em 0;
+	margin: .5em -1em;
+
+}
+
 #head{
 	margin: 30vh 0;
-
-
 }
 
 #start_logo {
@@ -73,8 +78,8 @@ a:hover {
 }
 
 .alert-info {
-  background-color: #27D1B7;
-  border-color: #21A692;
+  background-color: rgba(39,209,183,.5);
+  border-color: rgba(39,209,183,.5);
   color: #666666;
 }
 
