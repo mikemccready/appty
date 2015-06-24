@@ -9,6 +9,9 @@ class UsersController < ApplicationController
         format.json {
             render json: @users
         }
+       if params[:search]
+       @users = User.search(params[:search])
+       end
       end
   end
 

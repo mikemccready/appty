@@ -4,6 +4,13 @@
 
 <h2>Users</h2>
 
+<%= form_tag(users_path, :method => "get") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Providers" %>
+<%= submit_tag "Search" %>
+    <% end %>
+
+
+
    <% @users.each do |user| %>
      <div class="row">
         <div div class="col-xs-2 col-sm-1">

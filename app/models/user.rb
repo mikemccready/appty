@@ -29,4 +29,10 @@ class User < ActiveRecord::Base
       	user
     end
   end
+
+
+	def self.search(query)
+  		where("user_name ilike ?", "%#{query}%")
+	end
+
 end
