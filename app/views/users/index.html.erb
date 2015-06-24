@@ -2,23 +2,23 @@
  -->
 
 
-<h1>Users</h1>
-<table>
- <tbody>
+<h2>Users</h2>
+
    <% @users.each do |user| %>
-     <tr>
-        <td><img src="<%= user.image_url %>" width="50" id="prof_pic"/></td>
-        <td><h2><%= link_to user.user_name, user %></h2></td>
-        <td><%= user.email %></td>
-        <td><%= user.phone_number %></td>
+     <div class="row">
+        <div div class="col-xs-2 col-sm-1">
+            <img src="<%= user.image_url %>" width="50" id="prof_pic"/>
+        </td>
+        <td><h4><%= link_to user.user_name, user %></h4></td>
+<!--         <td><%= user.email %></td>
+        <td><%= user.phone_number %></td> -->
         <td><%= link_to "Add Provider", providerships_path(:provider_id => user), :method =>  :post %></td>
         <td><%#= link_to 'Show', user %></td>
         <td><%#= link_to 'Edit', edit_user_path(user) %></td>
         <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-     </tr>
+     </div>
    <% end %>
- </tbody>
-</table>
+
 
 
 
