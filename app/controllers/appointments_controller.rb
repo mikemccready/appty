@@ -2,7 +2,15 @@ class AppointmentsController < ApplicationController
   #before_action :set_appointment, only: [:show, :edit, :update, :destroy]
    
   def index
-    @appointment = Appointment.all
+    @appointments = Appointment.all
+      respond_to do |format|
+          format.html {
+              render
+          }
+          format.json {
+              render json: @appointments
+          }
+      end
   end
 
 
