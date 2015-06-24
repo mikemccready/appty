@@ -57,7 +57,6 @@ class UsersController < ApplicationController
 
     # respond_to do |format|
       if @user.update_attributes(user_params)
-        @user.save
         redirect_to user_path(@user)
         # format.html { redirect_to @user, notice: 'User was successfully updated.' }
         # format.json { render :show, status: :ok, location: @user }

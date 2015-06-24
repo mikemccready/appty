@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 		user.url = auth_hash['info']['urls']['Google']
 		user.token = auth_hash['credentials']['token']
 		user.category = ""
-		user.sign_ins = 1
+		user.sign_ins = 0
       	user.save!
       	user
     end
