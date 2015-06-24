@@ -19,4 +19,11 @@ RSpec.describe User, type: :model do
  		expect(user2).to be_valid
  		expect(user3).to be_invalid
  end
+
+  it "has a user name shorter than 2 characters" do
+  user = User.new(user_name: "a", email: "jess@gmail.com")
+  expect(user).to be_invalid 
+  end
+
+
 end
