@@ -37,9 +37,10 @@ class SessionsController < ApplicationController
         end	
       end
 		 session[:user_id] = @user.id
-     # flash[:notice] = "You have successfully logged in."
      if (@user.sign_ins = 1)
-       redirect_to users_path 
+       redirect_to edit_user_path(@user)
+       @user.sign_ins += 1
+       @user.save
      else 
       redirect_to user_path(@user)
      end
