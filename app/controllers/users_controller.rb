@@ -10,7 +10,7 @@ class UsersController < ApplicationController
             render
         }
         format.json {
-            render json: @users
+            render json: @users, only: [:user_name, :category]
         } 
       end
   end
