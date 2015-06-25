@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
 
 
 	def self.search(query)
-  		where("user_name ilike ?", "%#{query}%")
+  		#where("user_name ilike ?", "%#{query}%") 
+   		where("category ilike ? or user_name ilike ?", "%#{query}%","%#{query}%")
 	end
-
-end
+ end

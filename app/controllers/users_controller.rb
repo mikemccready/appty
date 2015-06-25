@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
   def index
+      if params[:search]
+       @users = User.search(params[:search])
+       else
     @users = User.all
     respond_to do |format|
         format.html {
@@ -9,11 +12,10 @@ class UsersController < ApplicationController
         format.json {
             render json: @users
         }
-       if params[:search]
-       @users = User.search(params[:search])
-       end
+     
       end
   end
+end
 
   def show
     @user = User.find(params[:id])
