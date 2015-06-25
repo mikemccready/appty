@@ -27,7 +27,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Hi <%= current_user.user_name.titleize %></a></li>
+          <li class="active"><%= link_to "Hi #{current_user.user_name.titleize}", user_path(current_user) %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Appointments', appointments_path %></li>
