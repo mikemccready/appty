@@ -10,3 +10,12 @@
     	<hr>
     <%end%>
 
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@appointment.latitude}%2C#{@appointment.longitude}" %>
+
+<h3>Nearby locations</h3>
+<ul>
+<% for location in @appointment.nearbys(10) %>
+ <li><%= link_to appointment.location, location %> (<%= appointment.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
