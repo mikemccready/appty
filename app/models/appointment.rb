@@ -6,6 +6,9 @@ class Appointment < ActiveRecord::Base
   	validates :start_time, presence: true
   	# validates :location, presence: true
 
+  	geocoded_by :location
+	after_validation :geocode, :if => :location_changed?
+
 
 
 end

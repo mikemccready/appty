@@ -32,7 +32,8 @@ class SessionsController < ApplicationController
             provider_id: @user.id,
             summary: i["summary"],
             event_id: i["id"],
-            event_creator: i["creator"]["displayName"])
+            event_creator: i["creator"]["displayName"],
+)
     	 	else
         end	
       end
