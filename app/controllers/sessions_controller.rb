@@ -9,8 +9,6 @@ class SessionsController < ApplicationController
 	def create
 		@user = User.from_omniauth(request.env["omniauth.auth"])
 		# @appointment = Appointment.from_omniauth(request.env["omniauth.auth"])
-     @user["sign_ins"] += 1
-     @user.save
      
 		@auth = request.env['omniauth.auth']
    		session['user_id'] = @auth["id"]
@@ -40,9 +38,15 @@ class SessionsController < ApplicationController
       end
 
 		 session[:user_id] = @user.id
+     
+     @user["sign_ins"] ||= 0
+     @user["sign_ins"] += 1
+     @user.save
+
 
 
      if (@user["sign_ins"] == 1)
+        @user["category"] = ""
        redirect_to edit_user_path(@user)
      else 
        redirect_to user_path(@user)

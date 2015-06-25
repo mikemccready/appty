@@ -17,17 +17,16 @@ class User < ActiveRecord::Base
 	class << self
 	  def from_omniauth(auth_hash)
 	    user = find_or_create_by(uid: auth_hash['uid'])
-	   		user.user_name = auth_hash['info']['name']
+	   	user.user_name = auth_hash['info']['name']
       	user.email = auth_hash['info']['email']
       	user.phone_number = auth_hash['info']['phone']
-				user.image_url = auth_hash['info']['image']
-				user.url = auth_hash['info']['urls']['Google']
-				user.token = auth_hash['credentials']['token']
-				user.category = ""
-				user.sign_ins = 0
+		user.image_url = auth_hash['info']['image']
+		user.url = auth_hash['info']['urls']['Google']
+		user.token = auth_hash['credentials']['token']
       	user.save!
       	user
     end
+
   end
 
 
