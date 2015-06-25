@@ -15,7 +15,7 @@
 
 <h3>Nearby locations</h3>
 <ul>
-<% for location in @appointment.nearbys(10) %>
- <li><%= link_to appointment.location, location %> (<%= appointment.distance.round(2) %> miles)</li>
+<% for appointment in @appointment.nearbys(10) %>
+ <li><%= link_to appointment.location, appointment %> (<%= appointment.distance.round(2) %> miles)</li>
 <% end %>
 </ul>
