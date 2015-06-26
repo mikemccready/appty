@@ -7,7 +7,7 @@
             <img src="<%= p.provider.image_url %>" width="50" id="prof_pic"/>
         </div>
         <div div class="col-xs-7 col-sm-8">
-            <h3><%= link_to p.provider.user_name.titleize, user_path %></h3>
+            <h3><%= link_to p.provider.user_name.titleize, user_path(p.provider) %></h3>
         </div>
         <div div class="col-xs-3 col-sm-2">
           <p><%= link_to "Book", user_path(p.provider.id) %></p>

@@ -40,6 +40,18 @@ body {
 	color: rgba(240,240,240, .8); 
 }
 
+.navbar-toggle {
+	margin: 0;
+	border: none;
+}
+
+.glyphicon-menu-hamburger {
+	font-size: 1.5em;
+	top: .5em;
+	line-height: 0;
+	color: rgba(0,0,0,.5);
+}
+
 #wrap{
 	height: 100vh;
 }
@@ -65,9 +77,9 @@ body {
 }
 
 #sign_button {
-	width: 90%;
+	left: 0;
 	max-width: 40em;
-	bottom: 1em;
+	bottom: 2em;
 	margin: 0 auto;
 	background-color: black;
 	font-size: 1.5em;
@@ -85,6 +97,7 @@ a:hover {
 
 #nav_logo {
 	height:1.5em;
+	padding: 0;
 }
 
 .alert-info {
