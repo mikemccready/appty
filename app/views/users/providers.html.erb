@@ -10,8 +10,8 @@
             <h3><%= link_to p.provider.user_name.titleize, user_path %></h3>
             <p><%= p.provider.category %></p>
         </div>
-			<p><%= link_to "Book Appty", user_path(p.provider.id) %></p>
-<!--             <%#= link_to "Add Provider", providerships_path(:provider_id => user), :method =>  :post %>
+		<p><%= link_to "Book Appty", user_path(p.provider.id) %></p>
+<!--     <%#= link_to "Add Provider", providerships_path(:provider_id => user), :method =>  :post %>
         </div>
         <td><%#= link_to 'Show', user %></td>
         <td><%#= link_to 'Edit', edit_user_path(user) %></td>
@@ -19,4 +19,5 @@
      </div>
      <hr>
    <% end %>
+   <%= link_to "Find Provider", users_path %>
 <% end %>   
