@@ -52,7 +52,7 @@ class SessionsController < ApplicationController
         @user["category"] = ""
        redirect_to edit_user_path(@user)
      else 
-       redirect_to user_path(@user)
+       redirect_to users_providers_path(@user)
      end
 
   end

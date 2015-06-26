@@ -64,11 +64,11 @@
   <div class="visible-xs bottom-nav">
     <div class="nav nav-pills nav-bar navbar-fixed-bottom row">
       <div role="presentation" class="col-xs-4 text-center">
-        <%= link_to "", appointments_path, class: "glyphicon glyphicon-calendar" %>
-      </div>
-      <div role="presentation" class="col-xs-4 text-center">
         <%= link_to "", users_path, class: "glyphicon glyphicon-briefcase" %>        
       </div>
+      <div role="presentation" class="col-xs-4 text-center">
+        <%= link_to "", users_appointments_path(current_user), class: "glyphicon glyphicon-calendar" %>
+      </div>      
       <div role="presentation" class="col-xs-4 text-center">
         <%= link_to "", user_path(current_user), class: "glyphicon glyphicon-home" %>
       </div>
