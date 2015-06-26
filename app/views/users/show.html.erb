@@ -12,7 +12,7 @@
 <p><%#= @user.phone_number %></p>
 <div class="row">
 <% if current_user.id == @user.id %>
-	<h3>My Appointments</h3>
+	<h3><%= link_to 'My Appointments', users_appointments_path(@user.id) %></h3>
 	<p><%= link_to "Make Appointment", appointments_path %></p>
 	<% @user.appointments.each do |a| %>
 		<% if a.start_time.future? %>
@@ -23,8 +23,8 @@
       		<p><%= a.location %></p>
 		<% end %>	
 	<% end %>	
-<% else %>
-	<h3>Available Appointments</h3>
+<% else %> 
+	 <h3>Available Appointments</h3>
 <% end %>
 
 

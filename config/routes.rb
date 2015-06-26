@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :users
 
 
+  get '/users/:id/appointments' => 'users#available', as: :users_appointments
+
+
   get "/auth/:provider/callback" => "sessions#create"
   get 'sessions/show'
   get '/auth/logout' => 'sessions#destroy'
