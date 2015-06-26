@@ -1,12 +1,22 @@
 <% if current_user.id == @user.id %>
 	<h3>Providers</h3>
-		<ul>
-		<% for providership in @user.providerships %>
-	   		<li>
-	     		<%=h providership.provider.user_name.titleize %>
-	     		(<%= link_to "remove", providership, :method => :delete %>)
-	   		</li>
-	 <% end %>
-	</ul>
-<% end %>	  
-<p><%= link_to "Find Providers", users_path %></p>
+
+   <% @user.providerships.each do |p| %>
+     <div class="row">
+        <div div class="col-xs-2 col-sm-1">
+            <img src="<%= p.provider.image_url %>" width="50" id="prof_pic"/>
+        </div>
+        <div div class="col-xs-7 col-sm-8">
+            <h3><%= link_to p.provider.user_name.titleize, user_path %></h3>
+            <p><%= p.provider.category %></p>
+        </div>
+			<p><%= link_to "Go to Page", user_path %></p>
+<!--             <%#= link_to "Add Provider", providerships_path(:provider_id => user), :method =>  :post %>
+        </div>
+        <td><%#= link_to 'Show', user %></td>
+        <td><%#= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+     </div>
+     <hr>
+   <% end %>
+<% end %>   
