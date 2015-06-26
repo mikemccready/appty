@@ -4,19 +4,19 @@
 		<img src="<%= @user["image_url"] %>" width="50" id="prof_pic"/>
 	</div>
 	<div class="col-xs-10 col-sm-11">	
-		<h1><%= @user.user_name.titleize %></h1>
+		<h2><%= @user.user_name.titleize %></h2>
 		<h3><%= @user.category.titleize %></h3>
 	</div>	
 </div>
 <p><%#= @user.email %></p>
 <p><%#= @user.phone_number %></p>
 <div class="row">
-<% if current_user %>
+<% if current_user.id == @user.id %>
 	<h3>My Appointments</h3>
 	<p><%= link_to "Make Appointment", appointments_path %></p>
 	<% @user.appointments.each do |a| %>
 		<% if a.start_time.future? %>
-			<h3><%= link_to a.event_creator.titleize, appointment_path(a.id) %></h3>
+			<h4><%= link_to a.event_creator.titleize, appointment_path(a.id) %></h4>
 	
 			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
       		<%= a.end_time.strftime("to %l:%M %p") %></p>
@@ -24,28 +24,31 @@
 		<% end %>	
 	<% end %>	
 <% else %>
-	<h2>Available Appointments</h2>
+	<h3>Available Appointments</h3>
 <% end %>
 
 
-
-<h3>Providers</h3>
-	<ul>
-	<% for providership in @user.providerships %>
-   		<li>
-     		<%=h providership.provider.user_name.titleize %>
-     		(<%= link_to "remove", providership, :method => :delete %>)
-   		</li>
- <% end %>
-</ul>  
-<p><%= link_to "Find Providers", users_path %></p>
-
-<h3>Clients</h3>
-<ul>
-	<% for user in @user.inverse_providers %>
-   		<li><%=h user.user_name.titleize %></li> 
-	<% end %>
-</ul> 
+<% if current_user.id == @user.id %>
+	<h3>Providers</h3>
+		<ul>
+		<% for providership in @user.providerships %>
+	   		<li>
+	     		<%=h providership.provider.user_name.titleize %>
+	     		(<%= link_to "remove", providership, :method => :delete %>)
+	   		</li>
+	 <% end %>
+	</ul>  
+	<p><%= link_to "Find Providers", users_path %></p>
+	
+	<% if current_user.is_provider == true %>
+		<h3>Clients</h3>
+		<ul>
+			<% for user in @user.inverse_providers %>
+	   			<li><%=h user.user_name.titleize %></li> 
+			<% end %>
+		</ul> 
+	<% end %>	
+<% end %> 
 
 <%= link_to 'Back to users', users_path %><br>
 </div>	
