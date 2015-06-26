@@ -1,21 +1,13 @@
 
-  <h1>You are booked with:</h1>
+  <h2>Appointment Booked!</h2>
 
 
     <% if @appointment.start_time.future? %> 
       <h3><%= @appointment.event_creator.titleize %></h3>
-      <p>On: <%= @appointment.start_time.strftime("%A, %B %-d at %l:%M %p")%> </p>
-       <p>At:   <%= @appointment.end_time.strftime("to %l:%M %p") %></p>
+      <p><%= @appointment.start_time.strftime("%A, %B %-d at %l:%M %p")%> <%= @appointment.end_time.strftime("to %l:%M %p") %></p>
        <h3><i class = 'glyphicon glyphicon-ok'></i></h3>
     	<hr>
     <%end%>
 
 
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@appointment.latitude}%2C#{@appointment.longitude}" %>
-
-<h3>Nearby locations</h3>
-<ul>
-<% for appointment in @appointment.nearbys(10) %>
- <li><%= link_to appointment.location, appointment %> (<%= appointment.distance.round(2) %> miles)</li>
-<% end %>
-</ul>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@appointment.latitude}%2C#{@appointment.longitude}", :class => "row col-xs-12" %>
