@@ -18,7 +18,7 @@ end
 
   def show
     @user = User.find(params[:id])
-    @appointments = @user.appointments
+    @appointments = Appointment.all
     respond_to do |format|
           format.html {
               render

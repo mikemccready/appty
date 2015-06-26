@@ -12,6 +12,7 @@
 <p><%#= @user.phone_number %></p>
 <div class="row">
 <% if current_user.id == @user.id %>
+
 	<h3><%= link_to 'My Appointments', users_appointments_path(@user.id) %></h3>
 	<p><%= link_to "Make Appointment", appointments_path %></p>
 	<% @user.appointments.each do |a| %>
@@ -23,9 +24,27 @@
       		<p><%= a.location %></p>
 		<% end %>	
 	<% end %>	
+
 <% else %> 
-	 <h3>Available Appointments</h3>
+
+	<h3>Available Appointments</h3>
+	<% @appointments.each do |a| %>
+		<% if (a.summary == "appty") && (a.start_time.future?) && (a.provider.id == @user.id) %>
+			<div class="row">
+				<h4><%= a.event_creator.titleize %></h4>
+				<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
+				<%= a.end_time.strftime("to %l:%M %p") %></p>
+				<%= link_to "Book It", edit_appointment_path(a.id) %>
+				<hr>
+			</div>	
+		<% end %>
+	<% end %>
+
 <% end %>
+
+
+
+
 
 
 <% if current_user.id == @user.id %>
