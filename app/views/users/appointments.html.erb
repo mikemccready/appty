@@ -1,18 +1,24 @@
 
 
 <div class="row">
-<%# if current_user.id == @user.id %>
 	<h3>My Appointments</h3>
-	<p><%#= link_to "Make Appointment", appointments_path %></p>
 	<% @user.appointments.each do |a| %>
 		<% if a.start_time.future? %>
-			<h4><%= link_to a.event_creator.titleize, appointment_path(a.id) %></h4>
-	
-			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
-      		<%= a.end_time.strftime("to %l:%M %p") %></p>
-      		<p><%= a.location %></p>
+			<div div class="col-xs-2 col-sm-1">
+            	<img src="<%= a.user.image_url %>" width="50" id="prof_pic"/>
+        	</div>
+        	<div class="col-xs-8 col-sm-9">
+				<h4><%= link_to a.event_creator.titleize, user_path(@user.id) %></h4>
+			</div>	
+			<div class="col-xs-2 col-sm-1">
+				<p><%= link_to "details", appointment_path(a.id) %></p>
+			</div>
+			<div class="col-xs-10 col-sm-11">
+				<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
+      			<%= a.end_time.strftime("to %l:%M %p") %></p>
+      			<p><%= a.location %></p>
+      		</div>	
+      			
 		<% end %>	
-	<% end %>	
-<%# else %>
-	<h3>Available Appointments</h3>
-<%# end %>
+	<% end %>
+</div>		
