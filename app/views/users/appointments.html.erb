@@ -4,8 +4,9 @@
 	<h3>My Appointments</h3>
 	<% @user.appointments.each do |a| %>
 		<% if a.start_time.future? %>
+		<div class="row">
 			<div div class="col-xs-2 col-sm-1">
-            	<img src="<%= a.user.image_url %>" width="50" id="prof_pic"/>
+            	<img src="<%= a.provider.image_url %>" width="50" id="prof_pic"/>
         	</div>
         	<div class="col-xs-8 col-sm-9">
 				<h4><%= link_to a.event_creator.titleize, user_path(@user.id) %></h4>
@@ -16,9 +17,11 @@
 			<div class="col-xs-10 col-sm-11">
 				<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
       			<%= a.end_time.strftime("to %l:%M %p") %></p>
+      		</div>	
+      		<div class="col-xs-10 col-sm-11">	
       			<p><%= a.location %></p>
       		</div>	
-      			
+      	</div>		
 		<% end %>	
 	<% end %>
 </div>		
