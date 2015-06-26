@@ -29,10 +29,15 @@ end
       end
   end
 
-  def available
+  def appointments
     @user = User.find(params[:id])
     # @appointments = @user.appointments
   end
+
+  def providers
+    @user = User.find(params[:id])
+    # @appointments = @user.appointments
+  end  
 
 
   def new
