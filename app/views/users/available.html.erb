@@ -1,0 +1,17 @@
+<div class="row">
+<% if current_user.id == @user.id %>
+	<h3>My Appointments</h3>
+	<p><%= link_to "Make Appointment", appointments_path %></p>
+	<% @user.appointments.each do |a| %>
+		<% if a.start_time.future? %>
+			<h4><%= link_to a.event_creator.titleize, appointment_path(a.id) %></h4>
+	
+			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
+      		<%= a.end_time.strftime("to %l:%M %p") %></p>
+      		<p><%= a.location %></p>
+		<% end %>	
+	<% end %>	
+<% else %>
+	<h3>Available Appointments</h3>
+<% end %>
+</div>
