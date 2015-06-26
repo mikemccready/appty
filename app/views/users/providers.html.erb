@@ -1,0 +1,12 @@
+<% if current_user.id == @user.id %>
+	<h3>Providers</h3>
+		<ul>
+		<% for providership in @user.providerships %>
+	   		<li>
+	     		<%=h providership.provider.user_name.titleize %>
+	     		(<%= link_to "remove", providership, :method => :delete %>)
+	   		</li>
+	 <% end %>
+	</ul>
+<% end %>	  
+<p><%= link_to "Find Providers", users_path %></p>

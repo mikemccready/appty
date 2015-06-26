@@ -31,7 +31,7 @@ end
 
   def available
     @user = User.find(params[:id])
-    @appointments = @user.appointments
+    # @appointments = @user.appointments
   end
 
 
