@@ -31,7 +31,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Appointments', users_appointments_path(current_user) %></li>
-        <li><%= link_to 'Providers', users_path %></li>
+        <li><%= link_to 'Providers', users_providers_path(current_user) %></li>
         <li role="separator" class="divider"></li>
         <li><%= link_to 'Log out', auth_logout_path %></li>
       </ul>
@@ -64,7 +64,7 @@
   <div class="visible-xs bottom-nav">
     <div class="nav nav-pills nav-bar navbar-fixed-bottom row">
       <div role="presentation" class="col-xs-4 text-center">
-        <%= link_to "", users_path, class: "glyphicon glyphicon-briefcase" %>        
+        <%= link_to "", users_providers_path(current_user), class: "glyphicon glyphicon-briefcase" %>        
       </div>
       <div role="presentation" class="col-xs-4 text-center">
         <%= link_to "", users_appointments_path(current_user), class: "glyphicon glyphicon-calendar" %>
