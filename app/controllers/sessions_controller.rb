@@ -39,9 +39,11 @@ class SessionsController < ApplicationController
       end
 
 		 session[:user_id] = @user.id
+
      
      @user["sign_ins"] ||= 0
      @user["sign_ins"] += 1
+     @user["is_provider"] = false
      @user.save
 
 
