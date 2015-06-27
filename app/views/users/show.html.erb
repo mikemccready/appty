@@ -15,15 +15,17 @@
 <div class="row">
 <% if current_user.id == @user.id %>
 
+	
+	<h3><%= link_to "Make Appointment", appointments_path %></h3>
 	<h3><%= link_to 'My Appointments', users_appointments_path(@user.id) %></h3>
-	<p><%= link_to "Make Appointment", appointments_path %></p>
 	<% @user.appointments.each do |a| %>
 		<% if a.start_time.future? %>
-			<h4><%= link_to a.event_creator.titleize, appointment_path(a.id) %></h4>
-	
+<!-- 			<h4><%#= link_to a.event_creator.titleize, appointment_path(a.id) %></h4>
+ -->			<h4><%= link_to a.event_creator.titleize, user_path(@user.id) %></h4>
 			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
-      		<%= a.end_time.strftime("to %l:%M %p") %></p>
-      		<p><%= a.location %></p>
+      		<%= a.end_time.strftime("to %l:%M %p") %><!-- </p> -->
+      	<!-- 	<p><%#= a.location %></p> -->
+      		<%= link_to "See Details", appointment_path(a.id) %> </p>
 		<% end %>	
 	<% end %>	
 
@@ -50,7 +52,7 @@
 
 
 <% if current_user.id == @user.id %>
-	<h3>Providers</h3>
+	<h3><%= link_to "Providers", users_providers_path(current_user)%></h3>
 		<ul>
 		<% for providership in @user.providerships %>
 	   		<li>
