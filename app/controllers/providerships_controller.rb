@@ -31,7 +31,8 @@ class ProvidershipsController < ApplicationController
       else
         # format.html { render :new }
         # format.json { render json: @providership.errors, status: :unprocessable_entity }
-        redirect_to root_path
+        flash[:notice] = "You already add this provider"
+        redirect_to users_path
       end
   end
 
