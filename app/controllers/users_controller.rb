@@ -4,7 +4,7 @@ class UsersController < ApplicationController
       if params[:search]
        @users = User.search(params[:search])
        else
-    @users = User.all
+    @users = User.where(:is_provider => true)
     respond_to do |format|
         format.html {
             render
