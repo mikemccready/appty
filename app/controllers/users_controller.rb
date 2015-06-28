@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 
   def index
+    @providerships = Providership.all 
       if params[:search]
        @users = User.search(params[:search])
+
        else
     @users = User.where(:is_provider => true)
     respond_to do |format|
