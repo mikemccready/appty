@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     expect(user).to be_invalid
   end 
 
-  it "is invalid without a email" do
+  it "is invalid without an email" do
     user = User.new(user_name: "some guy", email: nil)
     expect(user).to be_invalid
   end 
