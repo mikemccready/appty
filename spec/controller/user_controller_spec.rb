@@ -34,16 +34,6 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "POST create" do
-    describe "with valid params" do
-      
-      it "creates a new User" do
-        expect {
-          post :create, {:user => valid_attributes}
-        }.to change(User, :count).by(1)
-      end
-    end
-  end
 
 end
 
