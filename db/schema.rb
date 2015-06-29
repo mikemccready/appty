@@ -16,19 +16,6 @@ ActiveRecord::Schema.define(version: 20150625225712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "apiusers", force: :cascade do |t|
-    t.string   "user_name"
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "image_url"
-    t.string   "url"
-    t.string   "uid"
-    t.string   "provider"
-    t.boolean  "is_provider"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "appointments", force: :cascade do |t|
     t.integer  "provider_id"
     t.integer  "user_id"
@@ -43,6 +30,15 @@ ActiveRecord::Schema.define(version: 20150625225712) do
     t.string   "event_creator"
     t.float    "longitude"
     t.float    "latitude"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "appointment_id"
   end
 
   create_table "providerships", force: :cascade do |t|
