@@ -21,10 +21,11 @@
 @import "semantic-ui/collections/menu";
 
 html {
-	font-family: avenir;
+
 }
 
 body {
+	padding-bottom: 20em;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#efefef+0,dbdbdb+100 */
 	background: #efefef; /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  #efefef 0%, #dbdbdb 100%); /* FF3.6+ */
@@ -77,10 +78,10 @@ body {
 	height: 100vh;
 }
 
-.row{
+.row {
 	background-color: white;
 	padding: .5em 0;
-	margin: .5em -1em;
+	margin: .25em -1em 0;
 
 }
 
@@ -116,11 +117,26 @@ a:visited {
 	text-decoration:none;
 }
 
+#signin a:visited {
+	color:white;
+	background-color:rgba(0,0,0,0);
+	text-decoration:none;
+}
+
+#signin a:hover {
+	color: rgb(39,209,183);
+	background-color:rgba(0,0,0,0);
+	text-decoration:none;
+}
+
 a:hover {
 	color:rgb(15,255,218);
 	background-color:rgba(0,0,0,0);
 	text-decoration:none;
 }
+
+
+
 
 
 p {
@@ -133,7 +149,7 @@ p {
 }
 
 .alert-info {
-  background-color: rgba(39,209,183,.5);
+  background-color: rgba(39,209,183,.35);
   border-color: rgba(39,209,183,.8);
   color: #666666;
 }
@@ -164,6 +180,10 @@ p {
 
 #tagIconIndex {
 	margin: -.75em 0;
+}
+
+.findPro {
+	margin-top: 1em;
 }
 
 

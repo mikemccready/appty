@@ -26,9 +26,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
           <li class="active"><%= link_to "Hi #{current_user.user_name.titleize}", user_path(current_user) %></li>
+          <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Appointments', users_appointments_path(current_user) %></li>
+        <li><%= link_to 'Apptys', users_appointments_path(current_user) %></li>
         <li><%= link_to 'Providers', users_providers_path(current_user) %></li>
         <li role="separator" class="divider"></li>
         <li><%= link_to 'Log out', auth_logout_path %></li>
@@ -36,12 +37,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-
-
-
-
 
 
 <% end %>
