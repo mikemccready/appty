@@ -18,10 +18,10 @@
 <!--         <td><%= user.email %></td>
         <td><%= user.phone_number %></td> -->
         <div class="col-xs-3 col-sm-3">
-            <% if user.providerships.exists? %>
-            <p>Your Provider</p>
+            <% if @provderships.present? %>
+                provided
             <% else %>
-            <%= link_to "Add Provider", providerships_path(:provider_id => user), :method =>  :post %>
+                <%= link_to "Add Provider", providerships_path(:provider_id => user), :method =>  :post %>
             <% end %>
         </div>
         <td><%#= link_to 'Show', user %></td>

@@ -1,7 +1,7 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="row" id="profileID">
 	<div class="col-xs-2 col-sm-1">
-		<img src="<%= @user["image_url"] %>" width="50" id="prof_pic"/>
+		<img src="<%= @user["image_url"] %>" width="60" id="prof_pic"/>
 	</div>
 	<div class="col-xs-8 col-sm-9">	
 		<h2><%= @user.user_name.titleize %></h2>
@@ -10,22 +10,18 @@
 		<h3><%= @user.category.titleize %></h3>
 	</div>	
 </div>
-<p><%#= @user.email %></p>
-<p><%#= @user.phone_number %></p>
-<div class="row">
-<% if current_user.id == @user.id %>
 
-	
-	<h3><%= link_to "Make Appointment", appointments_path %></h3>
+<% if current_user.id == @user.id %>
 	<h3><%= link_to 'My Appointments', users_appointments_path(@user.id) %></h3>
 	<% @user.appointments.each do |a| %>
 		<% if a.start_time.future? %>
-<!-- 			<h4><%#= link_to a.event_creator.titleize, appointment_path(a.id) %></h4>
- -->			<h4><%= link_to a.event_creator.titleize, user_path(@user.id) %></h4>
-			<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
-      		<%= a.end_time.strftime("to %l:%M %p") %><!-- </p> -->
-      	<!-- 	<p><%#= a.location %></p> -->
-      		<%= link_to "See Details", appointment_path(a.id) %> </p>
+			<div class="row">
+				<h3 class="col-xs-9 col-sm-10"><%= link_to a.event_creator.titleize, user_path(@user.id) %></h4>
+ 				<p class="col-xs-3 col-sm-2"><%= link_to "Details", appointment_path(a.id) %></p>
+ 				<p class="col-xs-9 col-sm-10"><%= a.location %></p>
+				<p class="col-xs-10 col-sm-10"><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
+      			<%= a.end_time.strftime("to %l:%M %p") %></p>
+      		</div>
 		<% end %>	
 	<% end %>	
 
@@ -35,11 +31,10 @@
 	<% @appointments.each do |a| %>
 		<% if (a.summary == "appty") && (a.start_time.future?) && (a.provider.id == @user.id) %>
 			<div class="row">
-				<h4><%= a.event_creator.titleize %></h4>
-				<p><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
+				<h4 class="col-xs-9 col-sm-10"><%= a.event_creator.titleize %></h4>
+				<p class="col-xs-3 col-sm-2"><%= link_to "Book It", edit_appointment_path(a.id) %></p>
+				<p class="col-xs-10 col-sm-10"><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
 				<%= a.end_time.strftime("to %l:%M %p") %></p>
-				<%= link_to "Book It", edit_appointment_path(a.id) %>
-				<hr>
 			</div>	
 		<% end %>
 	<% end %>
@@ -48,19 +43,36 @@
 
 
 
-
-
-
 <% if current_user.id == @user.id %>
 	<h3><%= link_to "Providers", users_providers_path(current_user)%></h3>
-		<ul>
-		<% for providership in @user.providerships %>
-	   		<li>
-	     		<%=h providership.provider.user_name.titleize %>
-	     		(<%= link_to "remove", providership, :method => :delete %>)
-	   		</li>
-	 <% end %>
-	</ul>  
+
+   <% @user.providerships.each do |p| %>
+     <div class="row">
+        <div class="col-xs-2 col-sm-1">
+            <img src="<%= p.provider.image_url %>" width="50" id="prof_pic"/>
+        </div>
+        <div class="col-xs-7 col-sm-8">
+            <h3><%= link_to p.provider.user_name.titleize, user_path(p.provider) %></h3>
+        </div>
+        <div class="col-xs-3 col-sm-2">
+          <p><%= link_to "Book", user_path(p.provider.id) %></p>
+        </div>
+        <div class="col-xs-7 col-sm-8">    
+            <p><%= p.provider.category %></p>
+        </div>
+
+<!--     <%#= link_to "Add Provider", providerships_path(:provider_id => user), :method =>  :post %>
+        </div>
+        <td><%#= link_to 'Show', user %></td>
+        <td><%#= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+     </div>
+   <% end %>
+<% end %>   
+
+
+
+ 
 	<p><%= link_to "Find Providers", users_path %></p>
 	
 	<% if current_user.is_provider == true %>
@@ -71,10 +83,6 @@
 			<% end %>
 		</ul> 
 	<% end %>	
-<% end %> 
-
-<%= link_to 'Back to users', users_path %><br>
-</div>	
 
 <%# if current_user %>
 	<%#= link_to 'Edit', edit_user_path(@user) %>
