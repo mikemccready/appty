@@ -60,18 +60,18 @@
 <%= yield %>
 </div>
 <% if current_user %>
-  <div class="visible-xs bottom-nav">
-    <div class="nav nav-pills nav-bar navbar-fixed-bottom row">
-      <div role="presentation" class="col-xs-4 text-center">
+  <div class="visible-xs navbar navbar-default navbar-fixed-bottom">
+
+      <div role="presentation" class="col-xs-4 text-center" id="tab">
         <%= link_to "", users_providers_path(current_user), class: "glyphicon glyphicon-briefcase" %>        
       </div>
-      <div role="presentation" class="col-xs-4 text-center">
+      <div role="presentation" class="col-xs-4 text-center" id="tab">
         <%= link_to "", users_appointments_path(current_user), class: "glyphicon glyphicon-calendar" %>
       </div>      
-      <div role="presentation" class="col-xs-4 text-center">
+      <div role="presentation" class="col-xs-4 text-center" id="tab">
         <%= link_to "", user_path(current_user), class: "glyphicon glyphicon-home" %>
       </div>
-    <div>
+
 
   </div>
 

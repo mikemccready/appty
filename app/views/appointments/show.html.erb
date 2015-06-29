@@ -5,10 +5,8 @@
     <% if @appointment.start_time.future? %> 
       <h3><%= @appointment.event_creator.titleize %>     <i class = 'glyphicon glyphicon-ok'></i></h3>
       <p><%= @appointment.start_time.strftime("%A, %B %-d at %l:%M %p")%> <%= @appointment.end_time.strftime("to %l:%M %p") %></p>
-       
-    	<hr>
     <%end%>
 
 <div class="row">
-		<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@appointment.latitude}%2C#{@appointment.longitude}", :class => "row col-xs-12" %>
+		<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@appointment.latitude}%2C#{@appointment.longitude}", :class => "col-xs-12 col-sm-10 col-sm-offset-1" %>
 </div>		

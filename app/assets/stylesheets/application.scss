@@ -42,10 +42,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	margin: 0 auto;
 }
 
-.bottom-nav {
-	/*border-top: rgba(240,240,240, .8) solid 1px;*/
+.navbar-default {	
 	font-size: 1.25em;
-	color: rgba(240,240,240, .8); 
+	background-color: rgba(255,255,255,.75);
+	border: none;
 }
 
 .navbar-toggle {
@@ -58,6 +58,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	top: .5em;
 	line-height: 0;
 	color: rgba(0,0,0,.5);
+}
+
+#tab{
+	margin-top: .75em;
+}
+
+#signin {
+	background-color: rgba(0,0,0,0);
 }
 
 #wrap{
