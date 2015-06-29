@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   #before_action :set_appointment, only: [:show, :edit, :update, :destroy]
    
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.all.order( 'appointments.start_time ASC' )
       respond_to do |format|
           format.html {
               render

@@ -4,13 +4,12 @@ RSpec.describe UsersController, type: :controller do
 
   before :each do
     @user1 = User.create(user_name:"Mike", email: "mike@gmail.com")
-    @user2 = User.create(user_name:"Mike", email: "mike@gmail.com")
   end
 
   describe "GET index" do
     before :each do
       get :index
-  end
+    end
 
     it "should get index" do
       get 'index'

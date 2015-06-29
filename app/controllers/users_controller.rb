@@ -20,7 +20,7 @@ end
 
   def show
     @user = User.find(params[:id])
-    @appointments = Appointment.all
+    @appointments = Appointment.all.order( 'appointments.start_time ASC' )
     respond_to do |format|
           format.html {
               render
