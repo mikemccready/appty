@@ -72,15 +72,12 @@
         <td><%#= link_to 'Show', user %></td>
         <td><%#= link_to 'Edit', edit_user_path(user) %></td>
         <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-     </div>
+    </div>
    <% end %>
 <% end %>   
-
-
-
- 
+<div class="findPro">
 	<p><%= link_to "Find Providers", users_path %></p>
-	
+</div> 	
 	<% if current_user.is_provider == true %>
 		<h3>Clients</h3>
 		<ul>
