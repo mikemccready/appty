@@ -50,6 +50,10 @@ gem 'google-api-client', '~> 0.7.0', require: 'google/api_client'
 gem 'geocoder'
 
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
