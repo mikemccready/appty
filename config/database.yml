@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: appty_production
-  username: rails
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  username: appty
+  password: <%= ENV['APPTY_DATABASE_PASSWORD'] %>
