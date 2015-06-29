@@ -25,6 +25,7 @@ development:
   <<: *default
   database: appty_development
 
+
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -81,5 +82,5 @@ test:
 production:
   <<: *default
   database: appty_production
-  username: rails
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  username: appty
+  password: <%= ENV['APPTY_DATABASE_PASSWORD'] %>
