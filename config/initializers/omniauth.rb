@@ -8,16 +8,13 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 		# :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}},
 
 	    scope: 'https://www.googleapis.com/auth/plus.login, https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/calendar',
-<<<<<<< HEAD
+
 	    redirect_uri: 'https://apptytyme.herokuapp.com/auth/google_oauth2/callback'
 	    #redirect_uri: 'http://localhost:3000/auth/google_oauth2/callback'
-=======
-	    #redirect_uri: 'https://apptyapp.herokuapp.com/auth/google_oauth2/callback'
-	    redirect_uri: 'http://localhost:3000/auth/google_oauth2/callback'
->>>>>>> b2d518bec7443fb4ea0a14cf1e3b0e1a0b7e36f5
+
 	}
 
-end
+
 
 
 
