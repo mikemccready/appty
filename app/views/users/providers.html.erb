@@ -6,15 +6,17 @@
         <div class="col-xs-2 col-sm-1">
             <img src="<%= p.provider.image_url %>" width="50" id="prof_pic"/>
         </div>
-        <div class="col-xs-7 col-sm-8">
+        <div class="col-xs-8 col-sm-9 text-left">
             <h3><%= link_to p.provider.user_name.titleize, user_path(p.provider) %></h3>
         </div>
-        <div class="col-xs-3 col-sm-2">
-          <p><%= link_to "Book", user_path(p.provider.id) %></p>
-        </div>
-        <div class="col-xs-7 col-sm-8">    
+
+        <div class="col-xs-8 col-sm-9">    
             <p><%= p.provider.category %></p>
         </div>
+
+        <div class="col-xs-2 col-sm-1 text-center" id="tagIconPro">
+          <%= link_to "", user_path(p.provider.id), class: "glyphicon glyphicon-circle-arrow-right"%><br>
+        </div>        
 
 <!--     <%#= link_to "Add Provider", providerships_path(:provider_id => user), :method =>  :post %>
         </div>

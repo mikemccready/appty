@@ -20,16 +20,20 @@
 @import "semantic-ui";
 @import "semantic-ui/collections/menu";
 
+html {
+	font-family: avenir;
+}
+
 body {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
-background: #ffffff; /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-background: -o-radial-gradient(center, ellipse cover, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 12+ */
-background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
-background: radial-gradient(ellipse at center, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#efefef+0,dbdbdb+100 */
+	background: #efefef; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #efefef 0%, #dbdbdb 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#efefef), color-stop(100%,#dbdbdb)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #efefef 0%,#dbdbdb 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #efefef 0%,#dbdbdb 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #efefef 0%,#dbdbdb 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #efefef 0%,#dbdbdb 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#dbdbdb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .container-fluid {
@@ -44,7 +48,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .navbar-default {	
 	font-size: 1.25em;
-	background-color: rgba(255,255,255,.75);
+	background-color: rgba(255,255,255,.85);
 	border: none;
 }
 
@@ -53,9 +57,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	border: none;
 }
 
-.glyphicon-menu-hamburger {
-	font-size: 1.5em;
-	top: .5em;
+#hamburger{
+	display: inline-block;
+	width: .25em;
+	margin: .5em .75em 0 0;
 	line-height: 0;
 	color: rgba(0,0,0,.5);
 }
@@ -105,10 +110,21 @@ a {
 	color:rgb(39,209,183);
 }
 
+a:visited {
+	color:black;
+	background-color:rgba(0,0,0,0);
+	text-decoration:none;
+}
+
 a:hover {
 	color:rgb(15,255,218);
 	background-color:rgba(0,0,0,0);
 	text-decoration:none;
+}
+
+
+p {
+	color: rgba(0,0,0,.5);
 }
 
 #nav_logo {
@@ -124,4 +140,32 @@ a:hover {
 
 #prof_pic {
 	border-radius: 35px;
+	border: 2px solid rgba(0,0,0,0.1);
 }
+
+.glyphicon-plus {
+	font-size: 1.75em;
+	line-height: 0;
+}
+
+#label {
+	font-size: .75em;
+	color: rgba(0,0,0,.5);
+}
+
+#tagIcon {
+	margin: -2em 0 0;
+}
+
+#tagIconPro {
+	margin: -.5em 0;
+	font-size: 1.5em;
+}
+
+#tagIconIndex {
+	margin: -.75em 0;
+}
+
+
+
+
