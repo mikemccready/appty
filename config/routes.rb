@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   #   resources :apiusers, only: [:index, :show, :create, :destroy] 
   # end
 
+  namespace :api do
+    resources :users, only: [:index]
+  end
+
   resources :appointments
   resources :providerships
   # root 'users#index'
