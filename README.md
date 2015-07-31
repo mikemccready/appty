@@ -10,7 +10,7 @@ Providers can list their available slots time to customers, by entering 'appty' 
 
 This project has been created to make the appointment booking process hassle free.
 
-##Techs Used:
+##Techs Used
 Ruby on Rails
 Google OmniAuth
 Bootstrap
@@ -21,7 +21,7 @@ Google Calendar API
 Appty API (https://apptyapp.herokuapp.com/api/users.json)
 ```
 
-####History
+##History
 
 Early group development stages. (6/28/15)
 
@@ -37,7 +37,7 @@ Taylor Adams
 
 ```
 
-####Heroku
+##Heroku
 
 [Appty](http://apptyapp.com/)
 
