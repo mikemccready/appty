@@ -108,13 +108,11 @@ body {
 }
 
 a {
-	color:rgb(39,209,183);
+	color: black;
 }
 
 a:visited {
-	color:rgb(39,209,183);
-	background-color:rgba(0,0,0,0);
-	text-decoration:none;
+	color: black;
 }
 
 #signin a:visited {
@@ -130,13 +128,22 @@ a:visited {
 }
 
 a:hover {
-	color:rgb(15,255,218);
+	color:rgb(39,209,183) !important;
 	background-color:rgba(0,0,0,0);
 	text-decoration:none;
 }
 
 
+.providerInfo {
+	position: absolute;
+	display: inline-block;
+	margin: 1em;
+	padding: 0;
+}
 
+.providerInfo h3 {
+	line-height: 0;
+}
 
 
 p {
@@ -174,9 +181,28 @@ p {
 }
 
 #tagIconPro {
-	margin: -.5em 0;
+	display: inline-block;
+	position: absolute;
+	margin: .5em 0;
 	font-size: 1.5em;
 }
+
+#tagIconPro a {
+	color: rgba(0,0,0,.5);
+}
+
+.addProvider {
+	display: inline-block !important;
+	position: absolute;
+	margin: 1em 0;
+	font-size: 1.5em !important;
+	color: rgba(0,0,0,.5) !important;
+}
+
+.addProvider a {
+	color: rgba(0,0,0,.5) !important;
+}
+
 
 #tagIconIndex {
 	margin: -.75em 0;
