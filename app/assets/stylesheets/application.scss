@@ -21,11 +21,12 @@
 @import "semantic-ui/collections/menu";
 
 html {
-	font-family: "futura-pt";
+	font-family: "futura-pt", futura !important;
 
 }
 
 body {
+	font-family: "futura-pt", futura !important;
 	padding-bottom: 20em;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#efefef+0,dbdbdb+100 */
 	background: #efefef; /* Old browsers */
@@ -212,6 +213,7 @@ p {
 .findPro {
 	margin-top: 1em;
 }
+
 
 
 

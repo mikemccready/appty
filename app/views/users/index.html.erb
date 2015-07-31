@@ -1,8 +1,11 @@
 <h2>Providers</h2>
 
 <%= form_tag(users_path, :method => "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Providers", :class => "form-control" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Providers", :class  => "form-control " %>
 <% end %>
+
+<!-- <i class="fa fa-search"></i>
+ -->
 
 <% @users.each do |user| %>
     <div class="row">
