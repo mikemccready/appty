@@ -6,23 +6,19 @@
 
 <% @users.each do |user| %>
     <div class="row">
-        <div div class="col-xs-2 col-sm-1">
+        <div div class="col-xs-10 col-sm-11">
             <img src="<%= user.image_url %>" width="50" id="prof_pic"/>
+            <div class="providerInfo">
+                <h3><%= link_to user.user_name.titleize, user %></h3>  
+                <p><%= user.category %></p>
+            </div>
         </div>
-        <div div class="col-xs-8 col-sm-9">
-            <h3><%= link_to user.user_name.titleize, user %></h3>
-        </div>
-        <div div class="col-xs-8 col-sm-9">    
-            <p><%= user.category %></p>
-        </div>
-        <div class="col-xs-2 col-sm-2 text-center" id="tagIconIndex">
+        <div class="col-xs-2 col-sm-1 text-center" id="tagIconIndex">
             <% if @provderships.present? %>
                 provided
             <% else %>
                 <%= link_to "", providerships_path(:provider_id => user), :method =>  :post, 
-                    class: "glyphicon glyphicon-plus"%><br>
-                <span id="label"><%= link_to "Add", providerships_path(:provider_id => user), 
-                    :method =>  :post %></span>
+                    class: "fa fa-user-plus addProvider"%><br>
             <% end %>
         </div>
         <td><%#= link_to 'Show', user %></td>
