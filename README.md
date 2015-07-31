@@ -16,10 +16,10 @@ Google OmniAuth
 Bootstrap
 
 ## API Reference
-
+```
 Google Calendar API
 Appty API (https://apptyapp.herokuapp.com/api/users.json)
-
+```
 
 ####History
 
