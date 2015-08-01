@@ -11,15 +11,15 @@ Providers can list their available slots time to customers, by entering 'appty' 
 This project has been created to make the appointment booking process hassle free.
 
 ##Techs Used
-Ruby on Rails
-Google OmniAuth
-Bootstrap
+- Rails 4 + PostgreSQL
+- 4 models 
+- Google OmniAuth
+- Bootstrap
 
 ## API Reference
-```
+
 Google Calendar API
-Appty API (https://apptyapp.herokuapp.com/api/users.json)
-```
+[Appty API](https://apptyapp.herokuapp.com/api/users.json)
 
 ##History
 
@@ -31,9 +31,10 @@ Rspec
 
 ## Credits
 ```
-Mike McCready
-Jessica Grinberg
-Taylor Adams
+Team contributions on GitHub:
+[Mike McCready](https://github.com/mikemccready)
+[Jessica Grinberg](https://github.com/jessgrinberg)
+[Taylor Adams](https://github.com/Taylorpadams)
 
 ```
 
