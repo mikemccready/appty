@@ -18,8 +18,8 @@ This project has been created to make the appointment booking process hassle fre
 
 ## API Reference
 
-Google Calendar API
-[Appty API](https://apptyapp.herokuapp.com/api/users.json)
+- Google Calendar API
+- [Appty API](https://apptyapp.herokuapp.com/api/users.json)
 
 ##History
 
@@ -30,13 +30,12 @@ Early group development stages. (6/28/15)
 Rspec
 
 ## Credits
-```
-Team contributions on GitHub:
-[Mike McCready](https://github.com/mikemccready)
-[Jessica Grinberg](https://github.com/jessgrinberg)
-[Taylor Adams](https://github.com/Taylorpadams)
 
-```
+Team contributions on GitHub:
+- [Mike McCready](https://github.com/mikemccready)
+- [Jessica Grinberg](https://github.com/jessgrinberg)
+- [Taylor Adams](https://github.com/Taylorpadams)
+
 
 ##Heroku
 
