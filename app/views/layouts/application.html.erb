@@ -58,7 +58,7 @@
 <%= yield %>
 </div>
 <% if current_user %>
-  <div class="visible-xs navbar navbar-default navbar-fixed-bottom">
+  <nav class="visible-xs navbar navbar-default navbar-fixed-bottom">
 
       <div role="presentation" class="col-xs-4 text-center" id="tab">
         <%= link_to "", users_providers_path(current_user), class: "glyphicon glyphicon-briefcase" %>        
@@ -71,9 +71,10 @@
       </div>
 
 
-  </div>
+  </nav>
 
 <% end %>
+
 </body>
 </html>
 

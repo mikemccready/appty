@@ -1,33 +1,33 @@
 <%= form_for(@user) do |f| %>
  
-  <div class="field">
-    <%= f.label :user_name %><br>
-    <%= f.text_field :user_name %>
+  <div class="form-group">
+    <%= f.label :user_name, "Name" %><br>
+    <%= f.text_field :user_name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
+    <%= f.text_field :phone_number, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
 
-  <div class="field">
-    <%= f.label :is_provider %><br>
+  <div class="form-group">
+    <%= f.label :is_provider, "Are you a service provider?" %><br>
     <%= f.check_box :is_provider %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.text_field :category, class:"form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update", class:"btn btn-default" %>
   </div>
 
 <% end %>
