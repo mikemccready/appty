@@ -15,7 +15,7 @@
 
 <% if current_user.id == @user.id %>
 	<div id="showRow" class="row">
-		<h3 class="col-xs-12"><%= link_to 'My Appointments', users_appointments_path(@user.id) %></h3>
+		<h2 class="col-xs-12"><%= link_to 'My Appointments', users_appointments_path(@user.id) %></h2>
 	</div>	
 	<% @user.appointments.each do |a| %>
 		<% if a.start_time.future? && a.start_time.future? != nil %>
@@ -54,7 +54,7 @@
 <% if current_user.id == @user.id %>
 
 	<div id="showRow" class="row">
-		<h3 class="col-xs-10" ><%= link_to "Providers ", users_providers_path(current_user)%><%= link_to "", users_path, class:"fa fa-search" %></h3>
+		<h2 class="col-xs-12" ><%= link_to "Providers ", users_providers_path(current_user)%><%= link_to "", users_path, class:"fa fa-search" %></h2>
 	</div>	
    <% @user.providerships.each do |p| %>
      <div class="row">

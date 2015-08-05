@@ -1,6 +1,6 @@
 <% if current_user.id == @user.id %>
   <div id="showRow" class="row">
-  	<h1 class="col-xs-12">My Providers   <%= link_to "", users_path, class:"fa fa-search" %></h1>
+  	<h2 class="col-xs-12">My Providers   <%= link_to "", users_path, class:"fa fa-search" %></h2>
   </div>  
 
    <% @user.providerships.each do |p| %>
