@@ -1,4 +1,6 @@
-<h3>My Appointments</h3>
+  <div id="showRow" class="row">
+  	<h1 class="col-xs-12">My Appointments</h1>
+  </div> 
 <% @user.appointments.each do |a| %>
 	<% if a.start_time.future? %>
 	<div class="row">

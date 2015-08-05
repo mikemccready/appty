@@ -3,8 +3,12 @@
 <head>
   <title>Appty</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="//use.typekit.net/jxz0pda.js"></script>
+  
+  <script>try{Typekit.load();}catch(e){}</script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -26,11 +30,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
           <li class="active"><%= link_to "Hi #{current_user.user_name.titleize}", user_path(current_user) %></li>
-          <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Apptys', users_appointments_path(current_user) %></li>
         <li><%= link_to 'Providers', users_providers_path(current_user) %></li>
+        <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
         <li role="separator" class="divider"></li>
         <li><%= link_to 'Log out', auth_logout_path %></li>
       </ul>
@@ -41,7 +45,7 @@
 
 <% end %>
 
-<div class="container-fluid">
+<div class="container-fluid yield">
  <% if flash[:notice] %>
       <div class="alert alert-info alert-dismissible" role="alert"><%= flash[:notice]%>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -54,7 +58,7 @@
 <%= yield %>
 </div>
 <% if current_user %>
-  <div class="visible-xs navbar navbar-default navbar-fixed-bottom">
+  <nav class="visible-xs navbar navbar-default navbar-fixed-bottom">
 
       <div role="presentation" class="col-xs-4 text-center" id="tab">
         <%= link_to "", users_providers_path(current_user), class: "glyphicon glyphicon-briefcase" %>        
@@ -67,9 +71,10 @@
       </div>
 
 
-  </div>
+  </nav>
 
 <% end %>
+
 </body>
 </html>
 

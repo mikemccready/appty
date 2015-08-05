@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @providerships = Providership.all 
-      if params[:search]
+      if params[:search].present?
        @users = User.search(params[:search])
 
        else
