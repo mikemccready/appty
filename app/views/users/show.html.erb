@@ -54,7 +54,7 @@
 <% if current_user.id == @user.id %>
 
 	<div id="showRow" class="row">
-		<h2 class="col-xs-10" ><%= link_to "Providers ", users_providers_path(current_user)%><%= link_to "", users_path, class:"fa fa-search" %></h2>
+		<h2 class="col-xs-12" ><%= link_to "Providers ", users_providers_path(current_user)%><%= link_to "", users_path, class:"fa fa-search" %></h2>
 	</div>	
    <% @user.providerships.each do |p| %>
      <div class="row">

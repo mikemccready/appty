@@ -31,7 +31,7 @@ h1 {
 
 
 html li a {
-	font-size: 1.25em;
+	font-size: 1em;
 }
 
 .active {
@@ -46,6 +46,10 @@ body {
 }
 
 #bg {}
+
+#head {
+	margin-top:30vh;
+}
 
 .container-fluid {
 	max-width: 50em;
@@ -91,10 +95,13 @@ body {
 
 #signin {
 	background-color: rgba(0,0,0,0);
+	border: none;
 }
 
 #signin a {
-	color: white!important;
+	color: rgb(39,209,183)!important;
+	font-family: "ff-basic-gothic-web-pro", futura!important;
+	font-weight: normal;
 }
 
 #wrap{
@@ -112,11 +119,9 @@ body {
 #profileID {
 	background-color: rgba(0,0,0,0);
 	border: none;
+	margin-bottom: 1em;
 }
 
-#head{
-	margin: 30vh 0;
-}
 
 #start_logo {
 	width:80%;
@@ -231,14 +236,6 @@ p {
 	margin: 0 0 1em 0;
 	border: none;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b0f2e6+0,88e8d8+100 */
-	background: rgb(176,242,230); /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover,  rgba(176,242,230,1) 0%, rgba(136,232,216,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(176,242,230,1)), color-stop(100%,rgba(136,232,216,1))); /* Chrome,Safari4+ */
-	background: -webkit-radial-gradient(center, ellipse cover,  rgba(176,242,230,1) 0%,rgba(136,232,216,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover,  rgba(176,242,230,1) 0%,rgba(136,232,216,1) 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover,  rgba(176,242,230,1) 0%,rgba(136,232,216,1) 100%); /* IE10+ */
-	background: radial-gradient(ellipse at center,  rgba(176,242,230,1) 0%,rgba(136,232,216,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0f2e6', endColorstr='#88e8d8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 }
 
@@ -254,33 +251,45 @@ p {
 #showRow {
 	background-color: rgb(39,209,183);
 	color: white;
-	margin-top: .5em;
 	margin-bottom: 1em;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b0f2e6+0,88e8d8+100 */
-	background: rgb(176,242,230); /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover,  rgba(176,242,230,1) 0%, rgba(136,232,216,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(176,242,230,1)), color-stop(100%,rgba(136,232,216,1))); /* Chrome,Safari4+ */
-	background: -webkit-radial-gradient(center, ellipse cover,  rgba(176,242,230,1) 0%,rgba(136,232,216,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover,  rgba(176,242,230,1) 0%,rgba(136,232,216,1) 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover,  rgba(176,242,230,1) 0%,rgba(136,232,216,1) 100%); /* IE10+ */
-	background: radial-gradient(ellipse at center,  rgba(176,242,230,1) 0%,rgba(136,232,216,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0f2e6', endColorstr='#88e8d8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cee0de+0,c5dbd7+100 */
+	background: #cee0de; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #cee0de 0%, #c5dbd7 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#cee0de), color-stop(100%,#c5dbd7)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #cee0de 0%,#c5dbd7 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #cee0de 0%,#c5dbd7 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #cee0de 0%,#c5dbd7 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #cee0de 0%,#c5dbd7 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cee0de', endColorstr='#c5dbd7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 	border: none;
 }
 
-#showRow h2 a, #showRow h1, #showRow h2 {
+#showRow h3 a, #showRow h1,  #showRow h2, #showRow h2 a, #showRow h3 {
 	color: white!important;
 	font-weight: normal!important;
 }
 
-#showRow h2 .fa, #showRow h1 .fa {
+#showRow h3 .fa, #showRow h1 .fa, #showRow h2 .fa  {
 	color: white;
 	font-size: .75em;
 }
 
 .userShowHead {
 	padding-left: 1.5em;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: white!important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: white;
 }
 
 
