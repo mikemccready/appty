@@ -3,14 +3,7 @@ class AppointmentsController < ApplicationController
    
   def index
     @appointments = Appointment.all.order( 'appointments.start_time ASC' )
-      respond_to do |format|
-          format.html {
-              render
-          }
-          format.json {
-              render json: @appointments
-          }
-      end
+
   end
 
 

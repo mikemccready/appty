@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-  # namespace :api do
-  #   resources :apiusers, only: [:index, :show, :create, :destroy] 
-  # end
-
-  namespace :api do
-    resources :users, only: [:index]
-  end
 
   resources :appointments
   resources :providerships

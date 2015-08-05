@@ -18,7 +18,7 @@
 		<h2 class="col-xs-12"><%= link_to 'My Appointments', users_appointments_path(@user.id) %></h2>
 	</div>	
 	<% @user.appointments.each do |a| %>
-		<% if a.start_time.future? && a.start_time.future? != nil %>
+		<% if a.start_time.future? %>
 			<div class="row">
 				<h3 class="col-xs-9 col-sm-10"><%= link_to a.event_creator.titleize, user_path(@user.id) %></h4>
  				<p class="col-xs-3 col-sm-2"><%= link_to "Details", appointment_path(a.id) %></p>
