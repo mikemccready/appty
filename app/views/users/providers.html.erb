@@ -1,5 +1,7 @@
 <% if current_user.id == @user.id %>
-	<h1>My Providers</h1>
+  <div id="showRow" class="row">
+  	<h1 class="col-xs-12">My Providers   <%= link_to "", users_path, class:"fa fa-search" %></h1>
+  </div>  
 
    <% @user.providerships.each do |p| %>
      <div class="row">
@@ -22,7 +24,4 @@
         <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
      </div>
    <% end %>
-   <div class="findPro">
-        <%= link_to "Find Provider", users_path, class: "findPro" %>
-   </div>
 <% end %>   
