@@ -1,7 +1,7 @@
-<h2>Providers</h2>
+<h1>Providers</h1>
 
 <%= form_tag(users_path, :method => "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Providers", :class  => "form-control " %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Providers", class:"form-control", id:"search"%>
 <% end %>
 
 <!-- <i class="fa fa-search"></i>
@@ -16,12 +16,12 @@
                 <p><%= user.category %></p>
             </div>
         </div>
-        <div class="col-xs-2 col-sm-1 text-center" id="tagIconIndex">
+        <div class="col-xs-2 col-sm-1 text-center" id="listIcon">
             <% if @provderships.present? %>
                 provided
             <% else %>
                 <%= link_to "", providerships_path(:provider_id => user), :method =>  :post, 
-                    class: "fa fa-user-plus addProvider"%><br>
+                    class: "fa fa-user-plus"%><br>
             <% end %>
         </div>
         <td><%#= link_to 'Show', user %></td>

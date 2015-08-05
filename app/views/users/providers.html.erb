@@ -1,5 +1,5 @@
 <% if current_user.id == @user.id %>
-	<h3>Providers</h3>
+	<h1>My Providers</h1>
 
    <% @user.providerships.each do |p| %>
      <div class="row">
@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        <div class="col-xs-2 col-sm-1 text-center" id="tagIconPro">
+        <div class="col-xs-2 col-sm-1 text-center" id="listIcon">
           <%= link_to "", user_path(p.provider.id), class: "glyphicon glyphicon-circle-arrow-right"%><br>
         </div>        
 
