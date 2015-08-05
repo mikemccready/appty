@@ -14,9 +14,11 @@
 </div>
 
 <% if current_user.id == @user.id %>
-	<h3><%= link_to 'My Appointments', users_appointments_path(@user.id) %></h3>
+	<div id="showRow" class="row">
+		<h2 class="col-xs-12"><%= link_to 'My Appointments', users_appointments_path(@user.id) %></h2>
+	</div>	
 	<% @user.appointments.each do |a| %>
-		<% if a.start_time.future? %>
+		<% if a.start_time.future? && a.start_time.future? != nil %>
 			<div class="row">
 				<h3 class="col-xs-9 col-sm-10"><%= link_to a.event_creator.titleize, user_path(@user.id) %></h4>
  				<p class="col-xs-3 col-sm-2"><%= link_to "Details", appointment_path(a.id) %></p>
@@ -24,12 +26,13 @@
 				<p class="col-xs-10 col-sm-10"><%= a.start_time.strftime("%A, %B %-d at %l:%M %p")%> 
       			<%= a.end_time.strftime("to %l:%M %p") %></p>
       		</div>
-		<% end %>	
+		<% end %>		
 	<% end %>	
 
 <% else %> 
-
-	<h3>Available Appointments</h3>
+	<div id="showRow" class="row">
+		<h2 class="col-xs-12">Available Appointments</h2>
+	</div>	
 	<% @appointments.each do |a| %>
 		<% if (a.summary == "appty") && (a.start_time.future?) && (a.provider.id == @user.id) %>
 			<div class="row">
@@ -44,14 +47,15 @@
 			</div>	
 		<% end %>
 	<% end %>
-
 <% end %>
 
 
 
 <% if current_user.id == @user.id %>
-	<h3><%= link_to "Providers", users_providers_path(current_user)%></h3>
 
+	<div id="showRow" class="row">
+		<h2 class="col-xs-10" ><%= link_to "Providers ", users_providers_path(current_user)%><%= link_to "", users_path, class:"fa fa-search" %></h2>
+	</div>	
    <% @user.providerships.each do |p| %>
      <div class="row">
      	<div class="col-xs-10 col-sm-11">
@@ -67,9 +71,6 @@
     </div>
    <% end %>
 <% end %>   
-<div class="findPro">
-	<p><%= link_to "Find Providers", users_path %></p>
-</div> 	
 <!-- 	<%# if current_user.is_provider == true %>
 		<h3>Clients</h3>
 		<ul>
