@@ -34,8 +34,8 @@
 		<h2 class="col-xs-12">Available Appointments</h2>
 	</div>	
 	<% @appointments.each do |a| %>
-		<%# if (a.summary == "appty") && (a.start_time.future?) && (a.provider.id == @user.id) %>
-		<% if (a.summary == "appty") &&  (a.provider.id == @user.id) %>
+		<% if (a.summary == "appty") && (a.start_time.future?) && (a.provider.id == @user.id) %>
+		<%# if (a.summary == "appty") &&  (a.provider.id == @user.id) %>
 			<div class="row">
 				<h4 class="col-xs-10 col-sm-11"><%= a.event_creator.titleize %></h4>
 				<p class="col-xs-10 col-sm-11"><%= a.location %> </p>
